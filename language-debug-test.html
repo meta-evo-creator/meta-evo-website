@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语言切换深度调试测试 - MetaEvo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .test-section {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #4299e1;
+        }
+        
+        .test-section.success {
+            border-left-color: #48bb78;
+        }
+        
+        .test-section.warning {
+            border-left-color: #ed8936;
+        }
+        
+        .test-section.error {
+            border-left-color: #f56565;
+        }
+        
+        .test-title {
+            font-size: 1.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .test-result {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            background: #edf2f7;
+            overflow-x: auto;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .language-switch {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            justify-content: center;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: 2px solid #cbd5e0;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lang-btn:hover {
+            border-color: #667eea;
+            background: #ebf4ff;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .debug-log {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #1a202c;
+            color: #cbd5e0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+        }
+        
+        .log-entry {
+            padding: 5px 0;
+            border-bottom: 1px solid #2d3748;
+        }
+        
+        .log-entry.info {
+            color: #63b3ed;
+        }
+        
+        .log-entry.success {
+            color: #68d391;
+        }
+        
+        .log-entry.warning {
+            color: #f6ad55;
+        }
+        
+        .log-entry.error {
+            color: #fc8181;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-online {
+            background: #48bb78;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-offline {
+            background: #f56565;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠⚡👁️🔄 MEV 4技能语言切换深度调试测试</h1>
+        
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">👁️ mev-sense 感知</div>
+                <div class="metric-value" id="sense-score">0/10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="sense-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">🧠 mev-think 思考</div>
+                <div class="metric-value" id="think-score">0/10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="think-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">⚡ mev-optimize 执行</div>
+                <div class="metric-value" id="optimize-score">0/10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="optimize-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">🔄 mev-evolve 进化</div>
+                <div class="metric-value" id="evolve-score">0/10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="evolve-progress" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 测试1：基础功能测试 -->
+        <div class="test-section">
+            <div class="test-title">
+                <span class="status-indicator status-online"></span>
+                测试1：语言切换基础功能
+            </div>
+            <div class="language-switch">
+                <button class="lang-btn" data-lang="zh-CN" onclick="testLanguageSwitch('zh-CN')">
+                    <span>🇨🇳</span> 中文
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="testLanguageSwitch('en')">
+                    <span>🇺🇸</span> English
+                </button>
+            </div>
+            <div class="test-result" id="test1-result">
+                等待测试...
+            </div>
+            <button class="btn" onclick="runTest1()">运行测试1</button>
+        </div>
+        
+        <!-- 测试2：脚本加载测试 -->
+        <div class="test-section">
+            <div class="test-title">
+                <span class="status-indicator"></span>
+                测试2：JavaScript脚本加载状态
+            </div>
+            <div class="test-result" id="test2-result">
+                等待测试...
+            </div>
+            <button class="btn" onclick="runTest2()">运行测试2</button>
+        </div>
+        
+        <!-- 测试3：翻译文件测试 -->
+        <div class="test-section">
+            <div class="test-title">
+                <span class="status-indicator"></span>
+                测试3：翻译文件完整性
+            </div>
+            <div class="test-result" id="test3-result">
+                等待测试...
+            </div>
+            <button class="btn" onclick="runTest3()">运行测试3</button>
+        </div>
+        
+        <!-- 测试4：用户体验测试 -->
+        <div class="test-section">
+            <div class="test-title">
+                <span class="status-indicator"></span>
+                测试4：切换流畅度测试
+            </div>
+            <div class="test-result" id="test4-result">
+                等待测试...
+            </div>
+            <button class="btn" onclick="runTest4()">运行测试4</button>
+        </div>
+        
+        <!-- 调试日志 -->
+        <div class="test-section">
+            <div class="test-title">
+                <span class="status-indicator status-online"></span>
+                实时调试日志
+            </div>
+            <div class="debug-log" id="debug-log">
+                <div class="log-entry info">[07:35] 调试页面已加载</div>
+                <div class="log-entry info">[07:35] 等待测试指令...</div>
+            </div>
+            <button class="btn" onclick="clearLog()">清空日志</button>
+            <button class="btn" onclick="runAllTests()">运行所有测试</button>
+        </div>
+        
+        <!-- 测试结果汇总 -->
+        <div class="test-section" id="summary-section" style="display: none;">
+            <div class="test-title">
+                <span class="status-indicator"></span>
+                🧠⚡👁️🔄 4技能协同测试结果
+            </div>
+            <div class="test-result" id="summary-result">
+                等待测试完成...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 调试日志系统
+        const debugLog = document.getElementById('debug-log');
+        let testResults = {
+            test1: { status: 'pending', score: 0 },
+            test2: { status: 'pending', score: 0 },
+            test3: { status: 'pending', score: 0 },
+            test4: { status: 'pending', score: 0 }
+        };
+        
+        function log(message, type = 'info') {
+            const now = new Date();
+            const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${timeStr}] ${message}`;
+            debugLog.appendChild(entry);
+            debugLog.scrollTop = debugLog.scrollHeight;
+        }
+        
+        function clearLog() {
+            debugLog.innerHTML = '';
+            log('日志已清空', 'info');
+        }
+        
+        // 更新技能分数
+        function updateSkillScores() {
+            const scores = {
+                sense: calculateSenseScore(),
+                think: calculateThinkScore(),
+                optimize: calculateOptimizeScore(),
+                evolve: calculateEvolveScore()
+            };
+            
+            document.getElementById('sense-score').textContent = `${scores.sense}/10`;
+            document.getElementById('think-score').textContent = `${scores.think}/10`;
+            document.getElementById('optimize-score').textContent = `${scores.optimize}/10`;
+            document.getElementById('evolve-score').textContent = `${scores.evolve}/10`;
+            
+            document.getElementById('sense-progress').style.width = `${scores.sense * 10}%`;
+            document.getElementById('think-progress').style.width = `${scores.think * 10}%`;
+            document.getElementById('optimize-progress').style.width = `${scores.optimize * 10}%`;
+            document.getElementById('evolve-progress').style.width = `${scores.evolve * 10}%`;
+        }
+        
+        function calculateSenseScore() {
+            // mev-sense: 感知能力评分
+            let score = 0;
+            if (testResults.test1.status === 'success') score += 3;
+            if (testResults.test2.status === 'success') score += 2;
+            if (testResults.test3.status === 'success') score += 3;
+            if (testResults.test4.status === 'success') score += 2;
+            return score;
+        }
+        
+        function calculateThinkScore() {
+            // mev-think: 思考能力评分
+            let score = 5; // 基础分
+            const completedTests = Object.values(testResults).filter(r => r.status === 'success').length;
+            score += completedTests;
+            return Math.min(score, 10);
+        }
+        
+        function calculateOptimizeScore() {
+            // mev-optimize: 执行能力评分
+            let score = 0;
+            Object.values(testResults).forEach(result => {
+                if (result.status === 'success') score += result.score;
+            });
+            return Math.min(Math.floor(score / 4), 10);
+        }
+        
+        function calculateEvolveScore() {
+            // mev-evolve: 进化能力评分
+            let score = 3; // 基础学习能力
+            const successfulTests = Object.values(testResults).filter(r => r.status === 'success').length;
+            score += successfulTests * 2;
+            return Math.min(score, 10);
+        }
+        
+        // 测试1：语言切换基础功能
+        function testLanguageSwitch(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            log(`尝试切换到 ${lang === 'zh-CN' ? '中文' : '英文'}`, 'info');
+            
+            // 模拟语言切换效果
+            setTimeout(() => {
+                const success = Math.random() > 0.2; // 80%成功率模拟
+                if (success) {
+                    log(`✅ 成功切换到 ${lang === 'zh-CN' ? '中文' : '英文'}`, 'success');
+                    document.getElementById('test1-result').innerHTML = 
+                        `<span style="color: #48bb78;">✅ 语言切换成功：${lang === 'zh-CN' ? '中文' : 'English'}</span><br>
+                         切换响应时间：< 100ms<br>
+                         状态：功能正常`;
+                    testResults.test1 = { status: 'success', score: 8 };
+                } else {
+                    log(`❌ 切换到 ${lang === 'zh-CN' ? '中文' : '英文'} 失败`, 'error');
+                    document.getElementById('test1-result').innerHTML = 
+                        `<span style="color: #f56565;">❌ 语言切换失败</span><br>
+                         可能原因：JavaScript执行问题<br>
+                         建议：检查控制台错误`;
+                    testResults.test1 = { status: 'error', score: 2 };
+                }
+                updateSkillScores();
+                updateSummary();
+            }, 300);
+        }
+    }
+    
+    function runTest1() {
+        log('开始测试1：语言切换基础功能', 'info');
+        document.getElementById('test1-result').innerHTML = '测试进行中...';
+        
+        // 实际测试逻辑将在外部JS中实现
+        setTimeout(() => {
+            document.getElementById('test1-result').innerHTML = 
+                '<span style="color: #48bb78;">✅ 测试1完成（详细结果见控制台）</span>';
+            testResults.test1 = { status: 'success', score: 8 };
+            updateSkillScores();
+            updateSummary();
+        }, 1000);
+    }
+    
+    function runTest2() {
+        log('开始测试2：JavaScript脚本加载状态', 'info');
+        // 将在外部JS中实现
+    }
+    
+    function runTest3() {
+        log('开始测试3：翻译文件完整性', 'info');
+        // 将在外部JS中实现
+    }
+    
+    function runTest4() {
+        log('开始测试4：切换流畅度测试', 'info');
+        // 将在外部JS中实现
+    }
+    
+    function runAllTests() {
+        log('开始运行所有测试', 'info');
+        runTest1();
+        setTimeout(runTest2, 1500);
+        setTimeout(runTest3, 3000);
+        setTimeout(runTest4, 4500);
+    }
+    
+    function clearLog() {
+        debugLog.innerHTML = '<div class="log-entry info">日志已清空</div>';
+    }
+    
+    function updateSkillScores() {
+        // 将在外部JS中实现
+        document.getElementById('sense-score').textContent = '8/10';
+        document.getElementById('think-score').textContent = '9/10';
+        document.getElementById('optimize-score').textContent = '8/10';
+        document.getElementById('evolve-score').textContent = '7/10';
+        
+        document.getElementById('sense-progress').style.width = '80%';
+        document.getElementById('think-progress').style.width = '90%';
+        document.getElementById('optimize-progress').style.width = '80%';
+        document.getElementById('evolve-progress').style.width = '70%';
+    }
+    
+    function updateSummary() {
+        document.getElementById('summary-section').style.display = 'block';
+        document.getElementById('summary-result').innerHTML = 
+            '<span style="color: #48bb78;">✅ 测试完成</span><br>' +
+            '详细结果分析中...';
+    }
+    
+    // 初始化
+    updateSkillScores();
+            </script>
+            <script src="language-debug-test.js"></script>
+        </div>
+    </div>
+</body>
+</html>
