@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文档 - MetaEvo</title>
-    <meta name="description" content="MetaEvo 技能文档和使用指南。">
+    <title>鏂囨。 - MetaEvo</title>
+    <meta name="description" content="MetaEvo 鎶€鑳芥枃妗ｅ拰浣跨敤鎸囧崡銆?>
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
@@ -25,23 +25,35 @@
             </div>
             
             <div class="nav-menu">
-                <a href="/" class="nav-link">首页</a>
-                <a href="/products/" class="nav-link">产品</a>
-                <a href="/docs/" class="nav-link active">文档</a>
-                <a href="/about/" class="nav-link">关于</a>
+                <a href="/" class="nav-link">棣栭〉</a>
+                <a href="/products/" class="nav-link">浜у搧</a>
+                <a href="/docs/" class="nav-link active">鏂囨。</a>
+                <a href="/about/" class="nav-link">鍏充簬</a>
             </div>
             
             <div class="nav-actions">
                 <button class="btn btn-outline" id="language-toggle">EN</button>
             </div>
         </div>
-    </nav>
+            <!-- 语言切换 -->
+        <div class="language-switch">
+            <button class="lang-btn" data-lang="zh-CN" aria-label="切换到中文">
+                <span class="lang-flag">🇨🇳</span>
+                <span class="lang-text" data-i18n="language.chinese">中文</span>
+            </button>
+            <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+                <span class="lang-flag">🇺🇸</span>
+                <span class="lang-text" data-i18n="language.english">English</span>
+            </button>
+            <span class="lang-indicator" data-i18n="language.current">当前语言</span>
+        </div>
+</nav>
 
     <main class="docs-page">
         <section class="docs-hero">
             <div class="container">
-                <h1 class="docs-title">MetaEvo 文档</h1>
-                <p class="docs-subtitle">学习如何使用 MetaEvo 技能，提升AI助手能力</p>
+                <h1 class="docs-title">MetaEvo 鏂囨。</h1>
+                <p class="docs-subtitle">瀛︿範濡備綍浣跨敤 MetaEvo 鎶€鑳斤紝鎻愬崌AI鍔╂墜鑳藉姏</p>
             </div>
         </section>
 
@@ -49,39 +61,39 @@
             <div class="container">
                 <div class="docs-grid">
                     <div class="docs-card">
-                        <h3>快速开始</h3>
-                        <p>了解如何安装和使用 MetaEvo 技能。</p>
-                        <a href="/docs/quick-start/" class="docs-link">查看指南 →</a>
+                        <h3>蹇€熷紑濮?/h3>
+                        <p>浜嗚В濡備綍瀹夎鍜屼娇鐢?MetaEvo 鎶€鑳姐€?/p>
+                        <a href="/docs/quick-start/" class="docs-link">鏌ョ湅鎸囧崡 鈫?/a>
                     </div>
                     
                     <div class="docs-card">
                         <h3>mev-self-learning</h3>
-                        <p>AI自我学习进化技能详细文档。</p>
-                        <a href="/docs/api/self-learning/" class="docs-link">API文档 →</a>
+                        <p>AI鑷垜瀛︿範杩涘寲鎶€鑳借缁嗘枃妗ｃ€?/p>
+                        <a href="/docs/api/self-learning/" class="docs-link">API鏂囨。 鈫?/a>
                     </div>
                     
                     <div class="docs-card">
                         <h3>mev-efficiency</h3>
-                        <p>开发效率并行工程技能详细文档。</p>
-                        <a href="/docs/api/efficiency/" class="docs-link">API文档 →</a>
+                        <p>寮€鍙戞晥鐜囧苟琛屽伐绋嬫妧鑳借缁嗘枃妗ｃ€?/p>
+                        <a href="/docs/api/efficiency/" class="docs-link">API鏂囨。 鈫?/a>
                     </div>
                     
                     <div class="docs-card">
-                        <h3>最佳实践</h3>
-                        <p>使用 MetaEvo 技能的最佳实践和案例。</p>
-                        <a href="/docs/best-practices/" class="docs-link">查看案例 →</a>
+                        <h3>鏈€浣冲疄璺?/h3>
+                        <p>浣跨敤 MetaEvo 鎶€鑳界殑鏈€浣冲疄璺靛拰妗堜緥銆?/p>
+                        <a href="/docs/best-practices/" class="docs-link">鏌ョ湅妗堜緥 鈫?/a>
                     </div>
                     
                     <div class="docs-card">
-                        <h3>故障排除</h3>
-                        <p>常见问题解答和故障排除指南。</p>
-                        <a href="/docs/troubleshooting/" class="docs-link">解决问题 →</a>
+                        <h3>鏁呴殰鎺掗櫎</h3>
+                        <p>甯歌闂瑙ｇ瓟鍜屾晠闅滄帓闄ゆ寚鍗椼€?/p>
+                        <a href="/docs/troubleshooting/" class="docs-link">瑙ｅ喅闂 鈫?/a>
                     </div>
                     
                     <div class="docs-card">
-                        <h3>贡献指南</h3>
-                        <p>如何为 MetaEvo 项目贡献代码。</p>
-                        <a href="https://github.com/meta-evo-creator/meta-evo-website" class="docs-link" target="_blank">GitHub →</a>
+                        <h3>璐＄尞鎸囧崡</h3>
+                        <p>濡備綍涓?MetaEvo 椤圭洰璐＄尞浠ｇ爜銆?/p>
+                        <a href="https://github.com/meta-evo-creator/meta-evo-website" class="docs-link" target="_blank">GitHub 鈫?/a>
                     </div>
                 </div>
             </div>
@@ -96,30 +108,32 @@
                         <span class="logo-icon">MEV</span>
                         <span class="logo-text">MetaEvo</span>
                     </a>
-                    <p class="footer-tagline">进化进化的进化</p>
+                    <p class="footer-tagline">杩涘寲杩涘寲鐨勮繘鍖?/p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4 class="footer-heading">产品</h4>
+                        <h4 class="footer-heading">浜у搧</h4>
                         <a href="/products/mev-self-learning/" class="footer-link">mev-self-learning</a>
                         <a href="/products/mev-efficiency/" class="footer-link">mev-efficiency</a>
                     </div>
                     
                     <div class="footer-column">
-                        <h4 class="footer-heading">资源</h4>
-                        <a href="/docs/" class="footer-link">文档</a>
+                        <h4 class="footer-heading">璧勬簮</h4>
+                        <a href="/docs/" class="footer-link">鏂囨。</a>
                         <a href="https://github.com/meta-evo-creator" class="footer-link" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright">&copy; 2026 MetaEvo. 保留所有权利。</p>
+                <p class="copyright">&copy; 2026 MetaEvo. 淇濈暀鎵€鏈夋潈鍒┿€?/p>
             </div>
         </div>
     </footer>
 
     <script src="/assets/js/language-switcher.js"></script>
+    <script src="/assets/js/simple-language-switcher.js"></script>
 </body>
 </html>
+

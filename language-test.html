@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语言切换测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .language-switch { margin: 20px 0; }
+        .lang-btn { 
+            padding: 10px 20px; 
+            margin: 5px; 
+            border: 1px solid #ccc; 
+            background: #f0f0f0; 
+            cursor: pointer; 
+        }
+        .lang-btn.active { background: #007bff; color: white; }
+        #debug { margin-top: 20px; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>语言切换功能测试</h1>
+    
+    <div class="language-switch">
+        <button class="lang-btn" data-lang="zh-CN">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+    
+    <div id="content">
+        <h2 data-i18n="hero.title">MetaEvo - 进化进化的进化</h2>
+        <p data-i18n="hero.subtitle">让AI具备自我学习、自我进化、自我产品化的能力</p>
+    </div>
+    
+    <div id="debug">
+        <h3>调试信息</h3>
+        <p>当前语言: <span id="current-lang">zh-CN</span></p>
+        <p>存储的语言: <span id="stored-lang"></span></p>
+        <button onclick="testLanguageSwitch()">测试切换</button>
+        <button onclick="checkTranslations()">检查翻译</button>
+    </div>
+    
+    <script src="/assets/js/language-switcher.js"></script>
+    <script>
+        function testLanguageSwitch() {
+            console.log('测试语言切换...');
+            const switcher = window.languageSwitcher;
+            if (switcher) {
+                console.log('LanguageSwitcher found:', switcher);
+                const newLang = switcher.currentLang === 'zh-CN' ? 'en' : 'zh-CN';
+                console.log('Switching to:', newLang);
+                switcher.switchLanguageWithAnimation(newLang);
+            } else {
+                console.error('LanguageSwitcher not found');
+            }
+        }
+        
+        function checkTranslations() {
+            const switcher = window.languageSwitcher;
+            if (switcher && switcher.translations) {
+                console.log('Translations loaded:', Object.keys(switcher.translations));
+                console.log('English translations:', switcher.translations.en ? 'Yes' : 'No');
+                console.log('Chinese translations:', switcher.translations['zh-CN'] ? 'Yes' : 'No');
+            } else {
+                console.error('Translations not loaded');
+            }
+        }
+        
+        // 更新调试信息
+        setInterval(() => {
+            document.getElementById('current-lang').textContent = 
+                window.languageSwitcher ? window.languageSwitcher.currentLang : '未知';
+            document.getElementById('stored-lang').textContent = 
+                localStorage.getItem('metaEvoLang') || '未设置';
+        }, 1000);
+        
+        console.log('测试页面加载完成');
+    </script>
+</body>
+</html>

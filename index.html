@@ -1,26 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="hero.title">MetaEvo - 进化进化的进化</title>
-    <meta name="description" content="MetaEvo: 让AI具备自我学习、自我进化、自我产品化的能力。探索 mev-self-learning 和 mev-efficiency 技能。">
-    <meta name="keywords" content="MetaEvo, AI进化, 自我学习, 效率提升, mev技能, AI助手">
+    <title data-i18n="hero.title">MetaEvo - 杩涘寲杩涘寲鐨勮繘鍖?/title>
+    <meta name="description" content="MetaEvo: 璁〢I鍏峰鑷垜瀛︿範銆佽嚜鎴戣繘鍖栥€佽嚜鎴戜骇鍝佸寲鐨勮兘鍔涖€傛帰绱?mev-self-learning 鍜?mev-efficiency 鎶€鑳姐€?>
+    <meta name="keywords" content="MetaEvo, AI杩涘寲, 鑷垜瀛︿範, 鏁堢巼鎻愬崌, mev鎶€鑳? AI鍔╂墜">
     
-    <!-- 品牌色彩 -->
+    <!-- 鍝佺墝鑹插僵 -->
     <meta name="theme-color" content="#4A90E2">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="MetaEvo - 进化进化的进化">
-    <meta property="og:description" content="让AI具备自我学习、自我进化、自我产品化的能力">
+    <meta property="og:title" content="MetaEvo - 杩涘寲杩涘寲鐨勮繘鍖?>
+    <meta property="og:description" content="璁〢I鍏峰鑷垜瀛︿範銆佽嚜鎴戣繘鍖栥€佽嚜鎴戜骇鍝佸寲鐨勮兘鍔?>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meta-evo.com">
     
-    <!-- 样式 -->
+    <!-- 鏍峰紡 -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     
-    <!-- 字体 -->
+    <!-- 瀛椾綋 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,15 +29,15 @@
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.svg">
     
-    <!-- 预加载关键资源 -->
+    <!-- 棰勫姞杞藉叧閿祫婧?-->
     <link rel="preload" href="/assets/css/style.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
     
-    <!-- 语言切换脚本 -->
-    <script src="/assets/js/language-switcher.js" defer></script>
+    <!-- 璇█鍒囨崲鑴氭湰 -->
+    <script src="/assets/js/language-switcher.js"></script>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 瀵艰埅鏍?-->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -48,47 +48,59 @@
             </div>
             
             <div class="nav-menu">
-                <a href="/" class="nav-link active" data-i18n="nav.home">首页</a>
-                <a href="/products/" class="nav-link" data-i18n="nav.products">产品</a>
-                <a href="/docs/" class="nav-link" data-i18n="nav.docs">文档</a>
-                <a href="/about/" class="nav-link" data-i18n="nav.about">关于</a>
+                <a href="/" class="nav-link active" data-i18n="nav.home">棣栭〉</a>
+                <a href="/products/" class="nav-link" data-i18n="nav.products">浜у搧</a>
+                <a href="/docs/" class="nav-link" data-i18n="nav.docs">鏂囨。</a>
+                <a href="/about/" class="nav-link" data-i18n="nav.about">鍏充簬</a>
             </div>
             
             <div class="nav-actions">
-                <!-- 语言切换器将由JavaScript动态添加 -->
-                <a href="/docs/getting-started/" class="btn btn-primary" data-i18n="hero.cta.primary">开始使用</a>
+                <!-- 璇█鍒囨崲鍣ㄥ皢鐢盝avaScript鍔ㄦ€佹坊鍔?-->
+                <a href="/docs/getting-started/" class="btn btn-primary" data-i18n="hero.cta.primary">寮€濮嬩娇鐢?/a>
             </div>
             
-            <button class="nav-toggle" aria-label="菜单">
+            <button class="nav-toggle" aria-label="鑿滃崟">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-    </nav>
+            <!-- 语言切换 -->
+        <div class="language-switch">
+            <button class="lang-btn" data-lang="zh-CN" aria-label="切换到中文">
+                <span class="lang-flag">🇨🇳</span>
+                <span class="lang-text" data-i18n="language.chinese">中文</span>
+            </button>
+            <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+                <span class="lang-flag">🇺🇸</span>
+                <span class="lang-text" data-i18n="language.english">English</span>
+            </button>
+            <span class="lang-indicator" data-i18n="language.current">当前语言</span>
+        </div>
+</nav>
 
-    <!-- 英雄区域 -->
+    <!-- 鑻遍泟鍖哄煙 -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="gradient-text" data-i18n="hero.title">进化进化的进化</span>
+                    <span class="gradient-text" data-i18n="hero.title">杩涘寲杩涘寲鐨勮繘鍖?/span>
                 </h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">
-                    让AI具备自我学习、自我进化、自我产品化的能力
+                    璁〢I鍏峰鑷垜瀛︿範銆佽嚜鎴戣繘鍖栥€佽嚜鎴戜骇鍝佸寲鐨勮兘鍔?
                 </p>
                 <p class="hero-description" data-i18n="hero.description">
-                    探索 mev-self-learning 和 mev-efficiency 技能，构建智能、高效的AI助手生态系统。
+                    鎺㈢储 mev-self-learning 鍜?mev-efficiency 鎶€鑳斤紝鏋勫缓鏅鸿兘銆侀珮鏁堢殑AI鍔╂墜鐢熸€佺郴缁熴€?
                 </p>
                 
                 <div class="hero-actions">
-                    <a href="#products" class="btn btn-primary btn-large" data-i18n="hero.cta.primary">开始探索</a>
-                    <a href="/docs/" class="btn btn-secondary btn-large" data-i18n="hero.cta.secondary">查看文档</a>
+                    <a href="#products" class="btn btn-primary btn-large" data-i18n="hero.cta.primary">寮€濮嬫帰绱?/a>
+                    <a href="/docs/" class="btn btn-secondary btn-large" data-i18n="hero.cta.secondary">鏌ョ湅鏂囨。</a>
                 </div>
             </div>
             
             <div class="hero-visual">
-                <!-- 占位图，稍后可以添加实际图片 -->
+                <!-- 鍗犱綅鍥撅紝绋嶅悗鍙互娣诲姞瀹為檯鍥剧墖 -->
                 <div class="visual-placeholder">
                     <div class="visual-element"></div>
                     <div class="visual-element"></div>
@@ -98,50 +110,50 @@
         </div>
     </section>
 
-    <!-- 产品展示 -->
+    <!-- 浜у搧灞曠ず -->
     <section id="products" class="products-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="products.title">mev 技能系列</h2>
-                <p class="section-subtitle" data-i18n="products.subtitle">构建完整的AI助手能力生态</p>
+                <h2 class="section-title" data-i18n="products.title">mev 鎶€鑳界郴鍒?/h2>
+                <p class="section-subtitle" data-i18n="products.subtitle">鏋勫缓瀹屾暣鐨凙I鍔╂墜鑳藉姏鐢熸€?/p>
             </div>
             
             <div class="products-grid">
-                <!-- mev-self-learning 卡片 -->
+                <!-- mev-self-learning 鍗＄墖 -->
                 <div class="product-card">
                     <div class="product-icon">
-                        <span>🧠</span>
+                        <span>馃</span>
                     </div>
-                    <h3 class="product-title" data-i18n="product.self-learning.title">mev-self-learning</h3>
-                    <p class="product-subtitle" data-i18n="product.self-learning.subtitle">AI自我学习和进化技能</p>
+                    <h3 class="product-title" data-i18n="product.self-learning.title" data-i18n="product.self-learning.title">mev-self-learning</h3>
+                    <p class="product-subtitle" data-i18n="product.self-learning.subtitle">AI鑷垜瀛︿範鍜岃繘鍖栨妧鑳?/p>
                     <p class="product-description" data-i18n="product.self-learning.description">
-                        让AI助手能够自我诊断、学习、封装新技能，实现持续进化。
+                        璁〢I鍔╂墜鑳藉鑷垜璇婃柇銆佸涔犮€佸皝瑁呮柊鎶€鑳斤紝瀹炵幇鎸佺画杩涘寲銆?
                     </p>
                     
                     <div class="product-features">
-                        <h4 data-i18n="product.self-learning.features">核心功能</h4>
+                        <h4 data-i18n="product.self-learning.features">鏍稿績鍔熻兘</h4>
                         <ul>
-                            <li data-i18n="product.self-learning.feature1">自我诊断能力短板</li>
-                            <li data-i18n="product.self-learning.feature2">设计个性化学习路径</li>
-                            <li data-i18n="product.self-learning.feature3">技能封装和标准化</li>
-                            <li data-i18n="product.self-learning.feature4">进化监控和优化</li>
+                            <li data-i18n="product.self-learning.feature1">鑷垜璇婃柇鑳藉姏鐭澘</li>
+                            <li data-i18n="product.self-learning.feature2">璁捐涓€у寲瀛︿範璺緞</li>
+                            <li data-i18n="product.self-learning.feature3">鎶€鑳藉皝瑁呭拰鏍囧噯鍖?/li>
+                            <li data-i18n="product.self-learning.feature4">杩涘寲鐩戞帶鍜屼紭鍖?/li>
                         </ul>
                     </div>
                     
                     <div class="product-stats">
-                        <h4 data-i18n="product.self-learning.stats">性能指标</h4>
+                        <h4 data-i18n="product.self-learning.stats">鎬ц兘鎸囨爣</h4>
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <span class="stat-value">80%</span>
-                                <span class="stat-label" data-i18n="product.self-learning.stat1">学习效率提升</span>
+                                <span class="stat-label" data-i18n="product.self-learning.stat1">瀛︿範鏁堢巼鎻愬崌</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-value">2-3</span>
-                                <span class="stat-label" data-i18n="product.self-learning.stat2">每周新技能</span>
+                                <span class="stat-label" data-i18n="product.self-learning.stat2">姣忓懆鏂版妧鑳?/span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-value">4.8/5.0</span>
-                                <span class="stat-label" data-i18n="product.self-learning.stat3">用户满意度</span>
+                                <span class="stat-label" data-i18n="product.self-learning.stat3">鐢ㄦ埛婊℃剰搴?/span>
                             </div>
                         </div>
                     </div>
@@ -150,45 +162,45 @@
                        target="_blank" 
                        class="btn btn-outline" 
                        data-i18n="product.self-learning.cta">
-                        GitHub 查看
+                        GitHub 鏌ョ湅
                     </a>
                 </div>
                 
-                <!-- mev-efficiency 卡片 -->
+                <!-- mev-efficiency 鍗＄墖 -->
                 <div class="product-card">
                     <div class="product-icon">
-                        <span>⚡</span>
+                        <span>鈿?/span>
                     </div>
-                    <h3 class="product-title" data-i18n="product.efficiency.title">mev-efficiency</h3>
-                    <p class="product-subtitle" data-i18n="product.efficiency.subtitle">开发效率并行工程技能</p>
+                    <h3 class="product-title" data-i18n="product.efficiency.title" data-i18n="product.efficiency.title">mev-efficiency</h3>
+                    <p class="product-subtitle" data-i18n="product.efficiency.subtitle">寮€鍙戞晥鐜囧苟琛屽伐绋嬫妧鑳?/p>
                     <p class="product-description" data-i18n="product.efficiency.description">
-                        智能并行任务规划，显著提升开发工作效率和资源利用率。
+                        鏅鸿兘骞惰浠诲姟瑙勫垝锛屾樉钁楁彁鍗囧紑鍙戝伐浣滄晥鐜囧拰璧勬簮鍒╃敤鐜囥€?
                     </p>
                     
                     <div class="product-features">
-                        <h4 data-i18n="product.efficiency.features">核心功能</h4>
+                        <h4 data-i18n="product.efficiency.features">鏍稿績鍔熻兘</h4>
                         <ul>
-                            <li data-i18n="product.efficiency.feature1">智能并行任务规划</li>
-                            <li data-i18n="product.efficiency.feature2">系统资源优化分配</li>
-                            <li data-i18n="product.efficiency.feature3">WBS科学任务分解</li>
-                            <li data-i18n="product.efficiency.feature4">动态执行优化</li>
+                            <li data-i18n="product.efficiency.feature1">鏅鸿兘骞惰浠诲姟瑙勫垝</li>
+                            <li data-i18n="product.efficiency.feature2">绯荤粺璧勬簮浼樺寲鍒嗛厤</li>
+                            <li data-i18n="product.efficiency.feature3">WBS绉戝浠诲姟鍒嗚В</li>
+                            <li data-i18n="product.efficiency.feature4">鍔ㄦ€佹墽琛屼紭鍖?/li>
                         </ul>
                     </div>
                     
                     <div class="product-stats">
-                        <h4 data-i18n="product.efficiency.stats">实际效果</h4>
+                        <h4 data-i18n="product.efficiency.stats">瀹為檯鏁堟灉</h4>
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <span class="stat-value">89-94%</span>
-                                <span class="stat-label" data-i18n="product.efficiency.stat1">效率提升</span>
+                                <span class="stat-label" data-i18n="product.efficiency.stat1">鏁堢巼鎻愬崌</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-value">87分钟</span>
-                                <span class="stat-label" data-i18n="product.efficiency.stat2">完成时间</span>
+                                <span class="stat-value">87鍒嗛挓</span>
+                                <span class="stat-label" data-i18n="product.efficiency.stat2">瀹屾垚鏃堕棿</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-value">92%</span>
-                                <span class="stat-label" data-i18n="product.efficiency.stat3">资源利用率</span>
+                                <span class="stat-label" data-i18n="product.efficiency.stat3">璧勬簮鍒╃敤鐜?/span>
                             </div>
                         </div>
                     </div>
@@ -197,52 +209,52 @@
                        target="_blank" 
                        class="btn btn-outline" 
                        data-i18n="product.efficiency.cta">
-                        GitHub 查看
+                        GitHub 鏌ョ湅
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 生态价值 -->
+    <!-- 鐢熸€佷环鍊?-->
     <section class="ecosystem-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="ecosystem.title">生态协同价值</h2>
+                <h2 class="section-title" data-i18n="ecosystem.title">鐢熸€佸崗鍚屼环鍊?/h2>
                 <p class="section-subtitle" data-i18n="ecosystem.description">
-                    两个技能形成完整的价值闭环，实现指数级增长。
+                    涓や釜鎶€鑳藉舰鎴愬畬鏁寸殑浠峰€奸棴鐜紝瀹炵幇鎸囨暟绾у闀裤€?
                 </p>
             </div>
             
             <div class="ecosystem-grid">
                 <div class="ecosystem-card">
-                    <div class="ecosystem-icon">🔄</div>
-                    <h3 data-i18n="ecosystem.value1.title">自我进化</h3>
-                    <p data-i18n="ecosystem.value1.desc">mev-self-learning 创造新技能的能力</p>
+                    <div class="ecosystem-icon">馃攧</div>
+                    <h3 data-i18n="ecosystem.value1.title">鑷垜杩涘寲</h3>
+                    <p data-i18n="ecosystem.value1.desc">mev-self-learning 鍒涢€犳柊鎶€鑳界殑鑳藉姏</p>
                 </div>
                 
                 <div class="ecosystem-card">
-                    <div class="ecosystem-icon">🚀</div>
-                    <h3 data-i18n="ecosystem.value2.title">高效执行</h3>
-                    <p data-i18n="ecosystem.value2.desc">mev-efficiency 提升工作效率的技能</p>
+                    <div class="ecosystem-icon">馃殌</div>
+                    <h3 data-i18n="ecosystem.value2.title">楂樻晥鎵ц</h3>
+                    <p data-i18n="ecosystem.value2.desc">mev-efficiency 鎻愬崌宸ヤ綔鏁堢巼鐨勬妧鑳?/p>
                 </div>
                 
                 <div class="ecosystem-card">
-                    <div class="ecosystem-icon">📈</div>
-                    <h3 data-i18n="ecosystem.value3.title">组合效应</h3>
-                    <p data-i18n="ecosystem.value3.desc">自我进化 + 高效执行 = 指数级增长</p>
+                    <div class="ecosystem-icon">馃搱</div>
+                    <h3 data-i18n="ecosystem.value3.title">缁勫悎鏁堝簲</h3>
+                    <p data-i18n="ecosystem.value3.desc">鑷垜杩涘寲 + 楂樻晥鎵ц = 鎸囨暟绾у闀?/p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 行动号召 -->
+    <!-- 琛屽姩鍙峰彫 -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title" data-i18n="cta.title">加入 MetaEvo 社区</h2>
+                <h2 class="cta-title" data-i18n="cta.title">鍔犲叆 MetaEvo 绀惧尯</h2>
                 <p class="cta-description" data-i18n="cta.description">
-                    探索AI自我学习和效率优化的未来，参与开源社区建设。
+                    鎺㈢储AI鑷垜瀛︿範鍜屾晥鐜囦紭鍖栫殑鏈潵锛屽弬涓庡紑婧愮ぞ鍖哄缓璁俱€?
                 </p>
                 
                 <div class="cta-actions">
@@ -256,19 +268,19 @@
                        target="_blank" 
                        class="btn btn-secondary btn-large"
                        data-i18n="cta.button2">
-                        加入讨论
+                        鍔犲叆璁ㄨ
                     </a>
                     <a href="mailto:shibing2030@126.com" 
                        class="btn btn-outline btn-large"
                        data-i18n="cta.button3">
-                        联系我们
+                        鑱旂郴鎴戜滑
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 椤佃剼 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -278,51 +290,55 @@
                         <span class="logo-text">MetaEvo</span>
                     </a>
                     <p class="footer-description" data-i18n="footer.description">
-                        MetaEvo - 推动AI向更自主、更智能的方向发展
+                        MetaEvo - 鎺ㄥ姩AI鍚戞洿鑷富銆佹洿鏅鸿兘鐨勬柟鍚戝彂灞?
                     </p>
                 </div>
                 
                 <div class="footer-links">
-                    <h4 data-i18n="footer.quickLinks">快速链接</h4>
+                    <h4 data-i18n="footer.quickLinks">蹇€熼摼鎺?/h4>
                     <ul>
-                        <li><a href="/products/" data-i18n="footer.products">产品</a></li>
-                        <li><a href="/docs/" data-i18n="footer.docs">文档</a></li>
-                        <li><a href="/blog/" data-i18n="footer.blog">博客</a></li>
-                        <li><a href="/community/" data-i18n="footer.community">社区</a></li>
+                        <li><a href="/products/" data-i18n="footer.products">浜у搧</a></li>
+                        <li><a href="/docs/" data-i18n="footer.docs">鏂囨。</a></li>
+                        <li><a href="/blog/" data-i18n="footer.blog">鍗氬</a></li>
+                        <li><a href="/community/" data-i18n="footer.community">绀惧尯</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-legal">
-                    <h4 data-i18n="footer.legal">法律</h4>
+                    <h4 data-i18n="footer.legal">娉曞緥</h4>
                     <ul>
-                        <li><a href="/privacy/" data-i18n="footer.privacy">隐私政策</a></li>
-                        <li><a href="/terms/" data-i18n="footer.terms">服务条款</a></li>
-                        <li><a href="/license/" data-i18n="footer.license">开源协议</a></li>
+                        <li><a href="/privacy/" data-i18n="footer.privacy">闅愮鏀跨瓥</a></li>
+                        <li><a href="/terms/" data-i18n="footer.terms">鏈嶅姟鏉℃</a></li>
+                        <li><a href="/license/" data-i18n="footer.license">寮€婧愬崗璁?/a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p class="copyright" data-i18n="footer.copyright">
-                    © 2026 MetaEvo Technologies. 保留所有权利。
+                    漏 2026 MetaEvo Technologies. 淇濈暀鎵€鏈夋潈鍒┿€?
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- 初始化语言切换器 -->
+    <!-- 鍒濆鍖栬瑷€鍒囨崲鍣?-->
     <script>
-        // 等待DOM加载完成
+        // 绛夊緟DOM鍔犺浇瀹屾垚
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始化语言切换器
+            // 鍒濆鍖栬瑷€鍒囨崲鍣?
             window.languageSwitcher = new LanguageSwitcher();
             
-            // 监听语言切换事件
+            // 鐩戝惉璇█鍒囨崲浜嬩欢
             document.addEventListener('languageChanged', function(event) {
                 console.log('Language changed to:', event.detail.language);
-                // 可以在这里添加语言切换后的其他逻辑
+                // 鍙互鍦ㄨ繖閲屾坊鍔犺瑷€鍒囨崲鍚庣殑鍏朵粬閫昏緫
             });
         });
     </script>
+    <script src="/assets/js/simple-language-switcher.js"></script>
 </body>
 </html>
+
+
+
