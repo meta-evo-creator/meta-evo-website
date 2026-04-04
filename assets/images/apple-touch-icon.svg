@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+    <defs>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="50%" stop-color="#7B68EE"/>
+            <stop offset="100%" stop-color="#50E3C2"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- 背景圆 -->
+    <circle cx="90" cy="90" r="80" fill="url(#gradient2)"/>
+    
+    <!-- MEV大字母 -->
+    <text x="90" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="bold">
+        MEV
+    </text>
+    
+    <!-- 进化光环 -->
+    <circle cx="90" cy="90" r="70" stroke="white" stroke-width="2" fill="none" opacity="0.3"/>
+    <circle cx="90" cy="90" r="60" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
+    <circle cx="90" cy="90" r="50" stroke="white" stroke-width="2" fill="none" opacity="0.7"/>
+</svg>

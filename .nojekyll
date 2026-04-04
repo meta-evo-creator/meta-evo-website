@@ -1,4 +1,2 @@
-# 禁用Jekyll处理
-# GitHub Pages默认使用Jekyll处理静态网站
-# 这个空文件告诉GitHub不要使用Jekyll处理我们的网站
-# 我们的网站是纯HTML/CSS/JS，不需要Jekyll
+# 禁用 Jekyll 处理
+# 这是一个空文件，用于告诉 GitHub Pages 不要使用 Jekyll

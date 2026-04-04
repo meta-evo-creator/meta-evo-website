@@ -465,4 +465,9 @@ class LanguageSwitcher {
         }
     }
 
+    // 切换语言（别名方法，兼容测试）
+    switchToLanguage(lang) {
+        return this.switchLanguage(lang);
+    }
+
     // 获取当前

@@ -1,0 +1,40 @@
+# GitHub Pages 配置
+title: MetaEvo
+description: MetaEvo - 进化进化的进化
+baseurl: ""
+url: "https://meta-evo.com"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO 设置
+author: MetaEvo Team
+twitter:
+  username: meta_evo
+github:
+  username: meta-evo-creator
+
+# 排除文件
+exclude:
+  - .github/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+# 包含文件
+include:
+  - _redirects
+  - .nojekyll
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      sitemap: true
