@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - MetaEvo</title>
+    <meta name="description" content="了解MetaEvo的品牌理念、使命愿景和团队故事。进化进化的进化。">
+    
+    <!-- 共享样式和资源 -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    
+    <!-- 关于页面特定样式 -->
+    <style>
+        .about-hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .mission-section {
+            padding: 4rem 0;
+            background: var(--color-gray-50);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .mission-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--color-gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+        
+        .mission-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-gray-900);
+        }
+        
+        .mission-description {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+        
+        .story-section {
+            padding: 4rem 0;
+        }
+        
+        .story-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-gray-300);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: calc(50% - 2rem);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-right: auto;
+            padding-right: 2rem;
+            text-align: right;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            background: var(--color-primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: -0.5rem;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: -0.5rem;
+        }
+        
+        .timeline-date {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--color-gray-900);
+        }
+        
+        .timeline-description {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+        
+        .values-section {
+            padding: 4rem 0;
+            background: var(--color-gray-50);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--color-gray-200);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--color-gray-900);
+        }
+        
+        .value-description {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            padding: 4rem 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-gray-900);
+        }
+        
+        .team-role {
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .team-bio {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section {
+            padding: 4rem 0;
+            background: var(--color-gray-50);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--color-gray-200);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--color-gray-900);
+        }
+        
+        .contact-info {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+        
+        .contact-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 2rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            
+            .story-timeline::before {
+                left: 1rem;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 0.5rem;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../" class="logo">
+                    <span class="logo-icon">MEV</span>
+                    <span class="logo-text">MetaEvo</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="../" class="nav-link">首页</a>
+                <a href="../products/" class="nav-link">产品</a>
+                <a href="../docs/" class="nav-link">文档</a>
+                <a href="./" class="nav-link active">关于</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="../docs/getting-started/" class="btn btn-primary">开始使用</a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 关于英雄区域 -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">关于 MetaEvo</span>
+                </h1>
+                <p class="hero-subtitle">
+                    进化进化的进化
+                </p>
+                <p class="hero-description">
+                    我们致力于推动AI技术的自我进化，通过mev系列技能，
+                    让AI系统能够持续学习、优化和提升，实现真正的智能进化。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使命愿景 -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">使命与愿景</h2>
+                <p class="section-subtitle">我们为何存在，我们将去向何方</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">🎯</div>
+                    <h3 class="mission-title">使命</h3>
+                    <p class="mission-description">
+                        推动AI技术的自我进化，让每个AI系统都能持续学习、
+                        自主优化、不断提升，实现真正的智能成长。
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">🚀</div>
+                    <h3 class="mission-title">愿景</h3>
+                    <p class="mission-description">
+                        构建一个AI自我进化的生态系统，让智能系统像生物一样
+                        自然进化，持续适应变化，创造更大价值。
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">💡</div>
+                    <h3 class="mission-title">理念</h3>
+                    <p class="mission-description">
+                        进化不是终点，而是过程。真正的智能在于持续改进、
+                        不断优化、永不止步的进化能力。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌故事 -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">品牌故事</h2>
+                <p class="section-subtitle">MetaEvo的起源与发展</p>
+            </div>
+            
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025年12月</div>
+                    <h3 class="timeline-title">理念诞生</h3>
+                    <p class="timeline-description">
+                        在深入研究AI系统局限性后，我们意识到：
+                        真正的智能不在于一次性训练，而在于持续进化的能力。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026年1月</div>
+                    <h3 class="timeline-title">技术探索</h3>
+                    <p class="timeline-description">
+                        开始研发mev-self-learning原型，探索AI自我学习
+                        和持续优化的技术路径。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026年2月</div>
+                    <h3 class="timeline-title">效率突破</h3>
+                    <p class="timeline-date">2026年2月</div>
+                    <h3 class="timeline-title">效率突破</h3>
+                    <p class="timeline-description">
+                        开发mev-efficiency技能，将WBS和并行工程方法
+                        应用于AI开发，显著提升工作效率。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026年3月</div>
+                    <h3 class="timeline-title">品牌建立</h3>
+                    <p class="timeline-description">
+                        正式确立MetaEvo品牌，定义"进化进化的进化"核心理念，
+                        开始构建完整的产品体系。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026年4月</div>
+                    <h3 class="timeline-title">正式亮相</h3>
+                    <p class="timeline-description">
+                        MetaEvo官方网站上线，mev系列技能正式发布，
+                        开启AI自我进化的新篇章。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心价值观 -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心价值观</h2>
+                <p class="section-subtitle">指导我们行动的信念和原则</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3 class="value-title">持续进化</h3>
+                    <p class="value-description">
+                        我们相信进化永无止境，每个系统、
+                        每个个体都应持续改进、不断优化。
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">协同创新</h3>
+                    <p class="value-description">
+                        通过AI与人类的协同，创造超越单独能力的
+                        创新成果和价值。
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3 class="value-title">价值导向</h3>
+                    <p class="value-description">
+                        一切技术发展都以创造实际价值为目标，
+                        解决真实问题，满足实际需求。
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔧</div>
+                    <h3 class="value-title">实用主义</h3>
+                    <p class="value-description">
+                        技术必须实用、可用、易用，
+                        理论创新必须转化为实际应用。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">创始团队</h2>
+                <p class="section-subtitle">推动AI进化的梦想家与实干家</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">大山</div>
+                    <h3 class="team-name">大山</h3>
+                    <div class="team-role">创始人 & 战略总监</div>
+                    <p class="team-bio">
+                        拥有多年AI技术研究和产品经验，
+                        坚信AI的终极价值在于持续进化能力。
+                        主导MetaEvo品牌战略和技术方向。
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">MEV</div>
+                    <h3 class="team-name">mev智能体</h3>
+                    <div class="team-role">首席技术官</div>
+                    <p class="team-bio">
+                        基于mev-self-learning和mev-efficiency技能
+                        构建的智能系统，负责技术实现、持续优化
+                        和效率提升。
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">🌐</div>
+                    <h3 class="team-name">开源社区</h3>
+                    <div class="team-role">协作网络</div>
+                    <p class="team-bio">
+                        全球开发者和研究者的智慧汇聚，
+                        共同推动AI进化技术的发展和应用。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class

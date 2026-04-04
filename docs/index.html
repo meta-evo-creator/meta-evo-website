@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档 - MetaEvo</title>
+    <meta name="description" content="MetaEvo mev技能完整文档，包含快速开始指南、API参考、最佳实践和故障排除。">
+    
+    <!-- 共享样式和资源 -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    
+    <!-- 文档页面特定样式 -->
+    <style>
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .docs-sidebar {
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+        
+        .docs-nav {
+            background: var(--color-gray-100);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+        }
+        
+        .nav-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .nav-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .nav-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--color-gray-700);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            background: var(--color-gray-200);
+            color: var(--color-primary);
+        }
+        
+        .nav-link.active {
+            background: var(--color-primary);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .nav-icon {
+            font-size: 1.125rem;
+        }
+        
+        .docs-content {
+            max-width: 800px;
+        }
+        
+        .docs-hero {
+            margin-bottom: 3rem;
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .doc-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--color-gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+        
+        .doc-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--color-gray-900);
+        }
+        
+        .doc-description {
+            color: var(--color-gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .doc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.2s ease;
+        }
+        
+        .doc-link:hover {
+            gap: 0.75rem;
+        }
+        
+        .arrow-icon {
+            transition: transform 0.2s ease;
+        }
+        
+        .doc-link:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+        
+        .api-section {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .api-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-gray-900);
+        }
+        
+        .api-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .api-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+        }
+        
+        .api-name {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.875rem;
+            color: var(--color-gray-800);
+        }
+        
+        .api-version {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+            background: var(--color-gray-100);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-sidebar {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../" class="logo">
+                    <span class="logo-icon">MEV</span>
+                    <span class="logo-text">MetaEvo</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="../" class="nav-link">首页</a>
+                <a href="../products/" class="nav-link">产品</a>
+                <a href="./" class="nav-link active">文档</a>
+                <a href="../about/" class="nav-link">关于</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="./getting-started/" class="btn btn-primary">快速开始</a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 文档主内容 -->
+    <main class="container">
+        <div class="docs-container">
+            <!-- 侧边栏导航 -->
+            <aside class="docs-sidebar">
+                <div class="docs-nav">
+                    <div class="nav-section">
+                        <div class="nav-title">开始使用</div>
+                        <div class="nav-links">
+                            <a href="./getting-started/" class="nav-link active">
+                                <span class="nav-icon">🚀</span>
+                                <span>快速开始</span>
+                            </a>
+                            <a href="./installation/" class="nav-link">
+                                <span class="nav-icon">📦</span>
+                                <span>安装指南</span>
+                            </a>
+                            <a href="./configuration/" class="nav-link">
+                                <span class="nav-icon">⚙️</span>
+                                <span>配置说明</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <div class="nav-title">核心技能</div>
+                        <div class="nav-links">
+                            <a href="../products/mev-self-learning/" class="nav-link">
+                                <span class="nav-icon">🧠</span>
+                                <span>mev-self-learning</span>
+                            </a>
+                            <a href="../products/mev-efficiency/" class="nav-link">
+                                <span class="nav-icon">⚡</span>
+                                <span>mev-efficiency</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <div class="nav-title">API参考</div>
+                        <div class="nav-links">
+                            <a href="./api/" class="nav-link">
+                                <span class="nav-icon">🔧</span>
+                                <span>API总览</span>
+                            </a>
+                            <a href="./api/self-learning/" class="nav-link">
+                                <span class="nav-icon">🧠</span>
+                                <span>自我学习API</span>
+                            </a>
+                            <a href="./api/efficiency/" class="nav-link">
+                                <span class="nav-icon">⚡</span>
+                                <span>效率优化API</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <div class="nav-title">进阶指南</div>
+                        <div class="nav-links">
+                            <a href="./best-practices/" class="nav-link">
+                                <span class="nav-icon">🌟</span>
+                                <span>最佳实践</span>
+                            </a>
+                            <a href="./troubleshooting/" class="nav-link">
+                                <span class="nav-icon">🔧</span>
+                                <span>故障排除</span>
+                            </a>
+                            <a href="./faq/" class="nav-link">
+                                <span class="nav-icon">❓</span>
+                                <span>常见问题</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 文档内容 -->
+            <div class="docs-content">
+                <div class="docs-hero">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">MetaEvo 文档</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        完整的mev技能开发指南、API参考和最佳实践
+                    </p>
+                    <p class="hero-description">
+                        从这里开始您的MetaEvo之旅，了解如何充分利用mev-self-learning和mev-efficiency技能，
+                        提升AI开发效率，实现持续自我进化。
+                    </p>
+                </div>
+
+                <!-- 文档卡片网格 -->
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon">🚀</div>
+                        <h3 class="doc-title">快速开始</h3>
+                        <p class="doc-description">
+                            在5分钟内启动并运行您的第一个mev技能应用。
+                            包含基础配置、简单示例和立即上手指南。
+                        </p>
+                        <a href="./getting-started/" class="doc-link">
+                            开始学习
+                            <span class="arrow-icon">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <div class="doc-icon">🧠</div>
+                        <h3 class="doc-title">mev-self-learning</h3>
+                        <p class="doc-description">
+                            AI自我学习进化技能完整指南。
+                            学习如何配置、训练和优化自我学习模型。
+                        </p>
+                        <a href="../products/mev-self-learning/" class="doc-link">
+                            查看详情
+                            <span class="arrow-icon">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <div class="doc-icon">⚡</div>
+                        <h3 class="doc-title">mev-efficiency</h3>
+                        <p class="doc-description">
+                            开发效率并行工程技能完整文档。
+                            学习如何应用WBS分解和并行优化提升工作效率。
+                        </p>
+                        <a href="../products/mev-efficiency/" class="doc-link">
+                            查看详情
+                            <span class="arrow-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- API概览 -->
+                <div class="api-section">
+                    <h2 class="api-title">API参考</h2>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <span class="api-name">mev.self_learning.train()</span>
+                            <span class="api-version">v1.0</span>
+                        </div>
+                        <div class="api-item">
+                            <span class="api-name">mev.self_learning.optimize()</span>
+                            <span class="api-version">v1.0</span>
+                        </div>
+                        <div class="api-item">
+                            <span class="api-name">mev.efficiency.analyze()</span>
+                            <span class="api-version">v1.0</span>
+                        </div>
+                        <div class="api-item">
+                            <span class="api-name">mev.efficiency.plan()</span>
+                            <span class="api-version">v1.0</span>
+                        </div>
+                        <div class="api-item">
+                            <span class="api-name">mev.efficiency.execute()</span>
+                            <span class="api-version">v1.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 下一步行动 -->
+                <div class="cta-section" style="background: transparent; padding: 0;">
+                    <div class="cta-content">
+                        <h2 class="cta-title">准备好开始了吗？</h2>
+                        <p class="cta-description">
+                            选择最适合您需求的入门路径，开始您的MetaEvo之旅。
+                        </p>
+                        <div class="cta-actions">
+                            <a href="./getting-started/" class="btn btn-primary btn-large">快速开始指南</a>
+                            <a href="../products/" class="btn btn-outline btn-large">查看所有产品</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="logo">
+                        <span class="logo-icon">MEV</span>
+                        <span class="logo-text">MetaEvo</span>
+                    </a>
+                    <p class="footer-tagline">
+                        进化进化的进化
+                    </p>
+                    <p class="footer-copyright">
+                        © 2026 MetaEvo Technologies. 保留所有权利。
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">产品</h4>
+                        <a href="../products/mev-self-learning/" class="link-item">mev-self-learning</a>
+                        <a href="../products/mev-efficiency/" class="link-item">mev-efficiency</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">文档</h4>
+                        <a href="./getting-started/" class="link-item">快速开始</a>
+                        <a href="./api/" class="link-item">API参考</a>
+                        <a href="./best-practices/" class="link-item">最佳实践</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">关于</h4>
+                        <a href="../about/" class="link-item">品牌理念</a>
+                        <a href="../about/#contact" class="link-item">联系我们</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="../privacy/" class="legal-link">隐私政策</a>
+                    <a href="../terms/" class="legal-link">使用条款</a>
+                </div>
+                
+                <div class="footer-social">
+                    <span>关注我们:</span>
+                    <a href="https://github.com/meta-evo" class="social-link" aria-label="GitHub">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    
+    <!-- 文档页面特定脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航链接激活状态
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath.split('/').pop() || 
+                    (currentPath.includes('getting-started') && link.getAttribute('href') === './getting-started/')) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // 文档卡片交互
+            const docCards = document.querySelectorAll('.doc-card');
+            docCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // API项目交互
+            const apiItems = document.querySelectorAll('.api-item');
+            apiItems.forEach(item => {
+                item.addEventListener('click
