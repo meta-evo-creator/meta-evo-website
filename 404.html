@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面未找到 - MetaEvo</title>
+    <meta name="description" content="您访问的页面不存在，返回MetaEvo首页或探索其他内容。">
+    
+    <!-- 共享样式和资源 -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    
+    <style>
+        .error-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-content {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-gray-900);
+        }
+        
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--color-gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .suggestions {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-gray-200);
+        }
+        
+        .suggestions-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-gray-900);
+        }
+        
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .suggestion-link {
+            display: block;
+            padding: 1rem;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-md);
+            color: var(--color-gray-700);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .suggestion-link:hover {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .error-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/" class="logo">
+                    <span class="logo-icon">MEV</span>
+                    <span class="logo-text">MetaEvo</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link">产品</a>
+                <a href="/docs/" class="nav-link">文档</a>
+                <a href="/about/" class="nav-link">关于</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="/docs/getting-started/" class="btn btn-primary">开始使用</a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 错误页面内容 -->
+    <main class="container">
+        <div class="error-container">
+            <div class="error-content">
+                <div class="error-code">404</div>
+                <h1 class="error-title">页面未找到</h1>
+                <p class="error-description">
+                    抱歉，您访问的页面不存在或已被移动。
+                    可能是链接错误、页面已删除，或者您输入了错误的URL。
+                </p>
+                
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary btn-large">返回首页</a>
+                    <a href="/products/" class="btn btn-outline btn-large">探索产品</a>
+                    <a href="/docs/" class="btn btn-outline btn-large">查看文档</a>
+                </div>
+                
+                <div class="suggestions">
+                    <h2 class="suggestions-title">您可能想访问：</h2>
+                    <div class="suggestions-grid">
+                        <a href="/products/mev-self-learning/" class="suggestion-link">
+                            mev-self-learning
+                        </a>
+                        <a href="/products/mev-efficiency/" class="suggestion-link">
+                            mev-efficiency
+                        </a>
+                        <a href="/docs/getting-started/" class="suggestion-link">
+                            快速开始指南
+                        </a>
+                        <a href="/about/" class="suggestion-link">
+                            关于我们
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">MEV</span>
+                        <span class="logo-text">MetaEvo</span>
+                    </a>
+                    <p class="footer-tagline">
+                        进化进化的进化
+                    </p>
+                    <p class="footer-copyright">
+                        © 2026 MetaEvo Technologies. 保留所有权利。
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">产品</h4>
+                        <a href="/products/mev-self-learning/" class="link-item">mev-self-learning</a>
+                        <a href="/products/mev-efficiency/" class="link-item">mev-efficiency</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">资源</h4>
+                        <a href="/docs/" class="link-item">文档</a>
+                        <a href="/docs/getting-started/" class="link-item">快速开始</a>
+                        <a href="/docs/api/" class="link-item">API参考</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">关于</h4>
+                        <a href="/about/" class="link-item">品牌理念</a>
+                        <a href="/about/#contact" class="link-item">联系我们</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="/privacy/" class="legal-link">隐私政策</a>
+                    <a href="/terms/" class="legal-link">使用条款</a>
+                </div>
+                
+                <div class="footer-social">
+                    <span>关注我们:</span>
+                    <a href="https://github.com/meta-evo" class="social-link" aria-label="GitHub">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- 404页面特定脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 自动重定向常见错误路径
+            const currentPath = window.location.pathname;
+            const redirectMap = {
+                '/products': '/products/',
+                '/docs': '/docs/',
+                '/about': '/about/',
+                '/products/mev-self-learning': '/products/mev-self-learning/',
+                '/products/mev-efficiency': '/products/mev-efficiency/',
+                '/docs/getting-started': '/docs/getting-started/'
+            };
+            
+            // 检查是否需要重定向
+            if (redirectMap[currentPath]) {
+                console.log('自动重定向到:', redirectMap[currentPath]);
+                window.location.href = redirectMap[currentPath];
+            }
+            
+            // 记录404错误
+            console.warn('404错误 - 访问路径:', currentPath);
+            console.warn('建议检查链接或联系网站管理员');
+        });
+    </script>
+</body>
+</html>
