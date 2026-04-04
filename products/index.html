@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>浜у搧 - MetaEvo</title>
-    <meta name="description" content="鎺㈢储 MetaEvo mev 绯诲垪鎶€鑳戒骇鍝侊細mev-self-learning 鍜?mev-efficiency銆?>
+    <title>产品 - MetaEvo</title>
+    <meta name="description" content="探索 MetaEvo mev 系列技能产品：mev-self-learning 和 mev-efficiency。">
     
-    <!-- 鍏变韩鏍峰紡鍜岃祫婧?-->
+    <!-- 共享样式和资源 -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="/assets/css/products.css">
@@ -16,7 +16,7 @@
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <!-- 瀵艰埅鏍忥紙涓庨椤电浉鍚岋級 -->
+    <!-- 导航栏（与首页相同） -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -27,332 +27,172 @@
             </div>
             
             <div class="nav-menu">
-                <a href="/" class="nav-link">棣栭〉</a>
-                <a href="/" class="nav-link active">浜у搧</a>
-                <a href="/docs/" class="nav-link">鏂囨。</a>
-                <a href="/about/" class="nav-link">鍏充簬</a>
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link active">产品</a>
+                <a href="/docs/" class="nav-link">文档</a>
+                <a href="/about/" class="nav-link">关于</a>
             </div>
             
             <div class="nav-actions">
-                <a href="../docs/getting-started/" class="btn btn-primary">寮€濮嬩娇鐢?/a>
+                <button class="btn btn-outline" id="language-toggle">EN</button>
             </div>
-            
-            <button class="nav-toggle" aria-label="鑿滃崟">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- 浜у搧椤佃嫳闆勫尯鍩?-->
-    <section class="hero products-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">mev 绯诲垪鎶€鑳?/span>
-                </h1>
-                <p class="hero-subtitle">
-                    涓撲负AI鍔╂墜璁捐鐨勮繘鍖栬兘鍔涘伐鍏烽泦
-                </p>
+    <!-- 产品页面内容 -->
+    <main class="products-page">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">MetaEvo 产品</h1>
+                <p class="hero-subtitle">让AI具备自我学习、自我进化、自我产品化的能力</p>
                 <p class="hero-description">
-                    MetaEvo mev 绯诲垪鎶€鑳借AI鍔╂墜鍏峰鑷垜瀛︿範銆佽嚜鎴戜紭鍖栥€?                    鑷垜浜у搧鍖栫殑鑳藉姏锛屾樉钁楁彁鍗囧伐浣滄晥鐜囧拰鍒涢€犱环鍊笺€?                </p>
+                    探索我们的 mev 系列技能，构建智能、高效的AI助手生态系统。
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 浜у搧姣旇緝 -->
-    <section class="products-comparison">
-        <div class="container">
-            <div class="comparison-grid">
-                <!-- mev-self-learning -->
-                <div class="product-card featured">
-                    <div class="product-badge">鏈€鍙楁杩?/div>
-                    <div class="product-icon">
-                        <div class="icon-brain">馃</div>
-                    </div>
-                    <h2 class="product-title">mev-self-learning</h2>
-                    <p class="product-tagline">AI鑷垜瀛︿範杩涘寲鎶€鑳?/p>
-                    
-                    <div class="product-features">
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>鑷垜璇婃柇鍜屽垎鏋愯兘鍔?/span>
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid">
+                    <!-- mev-self-learning 产品 -->
+                    <div class="product-card">
+                        <div class="product-icon">🧠</div>
+                        <h3 class="product-title">mev-self-learning</h3>
+                        <p class="product-description">
+                            AI自我学习进化技能 - 让AI助手具备从经验中学习、改进和进化的能力。
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">自我诊断</span>
+                            <span class="feature-tag">主动学习</span>
+                            <span class="feature-tag">技能封装</span>
+                            <span class="feature-tag">持续进化</span>
+                            <span class="feature-tag">经验积累</span>
                         </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>涓诲姩瀛︿範鍜屾敼杩涙満鍒?/span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>鎶€鑳藉皝瑁呭拰浜у搧鍖?/span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>鎸佺画杩涘寲鍜屼紭鍖?/span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>缁忛獙绉疮鍜屼紶鎵?/span>
+                        <div class="product-actions">
+                            <a href="/products/mev-self-learning/" class="btn btn-primary">查看详情</a>
+                            <a href="https://github.com/meta-evo-creator/mev-self-learning" class="btn btn-outline" target="_blank">GitHub</a>
                         </div>
                     </div>
-                    
-                    <div class="product-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">30%+</span>
-                            <span class="stat-label">瀛︿範鏁堢巼鎻愬崌</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">8.5/10</span>
-                            <span class="stat-label">鐢ㄦ埛浣撻獙璇勫垎</span>
-                        </div>
-                    </div>
-                    
-                    <a href="/products/mev-self-learning/">浜嗚В鏇村</a>
-                </div>
-                
-                <!-- mev-efficiency -->
-                <div class="product-card">
-                    <div class="product-icon">
-                        <div class="icon-efficiency">鈿?/div>
-                    </div>
-                    <h2 class="product-title">mev-efficiency</h2>
-                    <p class="product-tagline">寮€鍙戞晥鐜囧苟琛屽伐绋嬫妧鑳?/p>
-                    
-                    <div class="product-features">
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>WBS浠诲姟鏅鸿兘鍒嗚В</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>骞惰宸ョ▼浼樺寲瑙勫垝</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>绯荤粺閰嶇疆鏅鸿兘璇勪及</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>鏁堢巼鎻愬崌閲忓寲鍒嗘瀽</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-check">鉁?/span>
-                            <span>瀹炴椂鐩戞帶鍜岃皟鏁?/span>
-                        </div>
-                    </div>
-                    
-                    <div class="product-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">50-300%</span>
-                            <span class="stat-label">鏁堢巼鎻愬崌鑼冨洿</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">34.5%</span>
-                            <span class="stat-label">骞冲潎鎻愬崌鐜?/span>
-                        </div>
-                    </div>
-                    
-                    <a href="/products/mev-efficiency/">浜嗚В鏇村</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 浜у搧鐗规€ц鎯?-->
-    <section class="product-details">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">鏍稿績鐗规€у姣?/h2>
-                <p class="section-subtitle">閫夋嫨閫傚悎鎮ㄩ渶姹傜殑鎶€鑳?/p>
-            </div>
-            
-            <div class="features-table">
-                <div class="table-header">
-                    <div class="table-cell feature-name">鐗规€?/div>
-                    <div class="table-cell product-name">mev-self-learning</div>
-                    <div class="table-cell product-name">mev-efficiency</div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">鏍稿績鍔熻兘</div>
-                    <div class="table-cell">AI鑷垜瀛︿範鍜岃繘鍖?/div>
-                    <div class="table-cell">宸ヤ綔鏁堢巼浼樺寲瑙勫垝</div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">閫傜敤鍦烘櫙</div>
-                    <div class="table-cell">AI鑳藉姏鎻愬崌锛屾妧鑳藉紑鍙?/div>
-                    <div class="table-cell">椤圭洰瑙勫垝锛屽伐浣滄晥鐜囨彁鍗?/div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">鎶€鏈熀纭€</div>
-                    <div class="table-cell">鏈哄櫒瀛︿範锛屾ā寮忚瘑鍒?/div>
-                    <div class="table-cell">杩愮瀛︼紝骞惰宸ョ▼</div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">瀛︿範鏇茬嚎</div>
-                    <div class="table-cell">涓瓑锛岄渶瑕佺悊瑙I鍘熺悊</div>
-                    <div class="table-cell">绠€鍗曪紝鐩磋鏄撶敤</div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">浠峰€间綋鐜?/div>
-                    <div class="table-cell">闀挎湡鑳藉姏澧為暱</div>
-                    <div class="table-cell">鍗虫椂鏁堢巼鎻愬崌</div>
-                </div>
-                
-                <div class="table-row">
-                    <div class="table-cell feature-name">鏈€浣崇粍鍚?/div>
-                    <div class="table-cell">+ mev-efficiency</div>
-                    <div class="table-cell">+ mev-self-learning</div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- mev-efficiency 产品 -->
+                    <div class="product-card">
+                        <div class="product-icon">⚡</div>
+                        <h3 class="product-title">mev-efficiency</h3>
+                        <p class="product-description">
+                            开发效率并行工程技能 - 优化AI助手的工作流程，最大化效率和产出。
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">并行执行</span>
+                            <span class="feature-tag">自动化</span>
+                            <span class="feature-tag">优化算法</span>
+                            <span class="feature-tag">资源管理</span>
+                            <span class="feature-tag">性能监控</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="/products/mev-efficiency/" class="btn btn-primary">查看详情</a>
+                            <a href="https://github.com/meta-evo-creator/mev-efficiency" class="btn btn-outline" target="_blank">GitHub</a>
+                        </div>
+                    </div>
 
-    <!-- 浣跨敤鍦烘櫙 -->
-    <section class="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">鍏稿瀷浣跨敤鍦烘櫙</h2>
-                <p class="section-subtitle">mev鎶€鑳藉浣曞府鍔╂偍</p>
-            </div>
-            
-            <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-icon">馃</div>
-                    <h3 class="case-title">AI鍔╂墜鑳藉姏鎻愬崌</h3>
-                    <p class="case-description">
-                        浣跨敤 mev-self-learning 璁〢I鍔╂墜鑳藉浠庨敊璇腑瀛︿範锛?                        涓诲姩鏀硅繘宸ヤ綔鏂规硶锛屼笉鏂彁鍗囪嚜韬兘鍔涖€?                    </p>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-icon">馃殌</div>
-                    <h3 class="case-title">椤圭洰鏁堢巼浼樺寲</h3>
-                    <p class="case-description">
-                        浣跨敤 mev-efficiency 鏅鸿兘瑙勫垝椤圭洰宸ヤ綔娴佺▼锛?                        鏈€澶у寲骞惰鎵ц鏁堢巼锛屾樉钁楃缉鐭」鐩懆鏈熴€?                    </p>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-icon">馃敡</div>
-                    <h3 class="case-title">鎶€鑳戒骇鍝佸紑鍙?/h3>
-                    <p class="case-description">
-                        灏嗗涔犳垚鏋滆浆鍖栦负鍙鐢ㄧ殑鎶€鑳戒骇鍝侊紝
-                        寤虹珛鑷繁鐨勬妧鑳界敓鎬佺郴缁熴€?                    </p>
-                </div>
-                
-                <div class="case-card">
-                    <div class="case-icon">馃搳</div>
-                    <h3 class="case-title">宸ヤ綔娴佺▼鍒嗘瀽</h3>
-                    <p class="case-description">
-                        鍒嗘瀽鐜版湁宸ヤ綔娴佺▼鐨勭摱棰堝拰浼樺寲鐐癸紝
-                        鎻愪緵绉戝鐨勬敼杩涘缓璁拰瀹炴柦鏂规銆?                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- user-success-perspective 产品 -->
+                    <div class="product-card">
+                        <div class="product-icon">🎯</div>
+                        <h3 class="product-title">user-success-perspective</h3>
+                        <p class="product-description">
+                            用户视角成功率提升技能 - 帮助AI从技术正确性转向用户满意度。
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">用户需求分析</span>
+                            <span class="feature-tag">视角转换</span>
+                            <span class="feature-tag">成功率优化</span>
+                            <span class="feature-tag">经验封装</span>
+                            <span class="feature-tag">方法论开发</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://github.com/meta-evo-creator/user-success-perspective" class="btn btn-primary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
 
-    <!-- 琛屽姩鍙峰彫 -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">寮€濮嬩娇鐢?mev 鎶€鑳?/h2>
+                    <!-- mev-meta-skill 产品 -->
+                    <div class="product-card">
+                        <div class="product-icon">📦</div>
+                        <h3 class="product-title">mev-meta-skill</h3>
+                        <p class="product-description">
+                            mev技能套件包装器 - 提供完整的mev技能套件管理和使用入口。
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">技能管理</span>
+                            <span class="feature-tag">统一接口</span>
+                            <span class="feature-tag">使用简化</span>
+                            <span class="feature-tag">套件整合</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://github.com/meta-evo-creator/mev-meta-skill" class="btn btn-primary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">开始使用 MetaEvo 技能</h2>
                 <p class="cta-description">
-                    閫夋嫨閫傚悎鎮ㄩ渶姹傜殑鎶€鑳斤紝绔嬪嵆寮€濮嬫彁鍗嘇I鍔╂墜鐨勮兘鍔涘拰宸ヤ綔鏁堢巼銆?                </p>
+                    立即探索我们的技能，提升您的AI助手能力，构建更智能、更高效的工作流程。
+                </p>
                 <div class="cta-actions">
-                    <a href="/products/mev-self-learning/">浜嗚В mev-self-learning</a>
-                    <a href="/products/mev-efficiency/">浜嗚В mev-efficiency</a>
+                    <a href="/docs/" class="btn btn-primary btn-large">查看文档</a>
+                    <a href="https://github.com/meta-evo-creator" class="btn btn-outline btn-large" target="_blank">GitHub 组织</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 椤佃剼 -->
+    <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <span class="logo-icon">MEV</span>
                         <span class="logo-text">MetaEvo</span>
                     </a>
-                    <p class="footer-tagline">
-                        杩涘寲杩涘寲鐨勮繘鍖?                    </p>
-                    <p class="footer-copyright">
-                        漏 2026 MetaEvo Technologies. 淇濈暀鎵€鏈夋潈鍒┿€?                    </p>
+                    <p class="footer-tagline">进化进化的进化</p>
                 </div>
                 
                 <div class="footer-links">
-                    <div class="link-group">
-                        <h4 class="link-title">浜у搧</h4>
-                        <a href="/products/mev-self-learning/">mev-self-learning</a>
-                        <a href="/products/mev-efficiency/">mev-efficiency</a>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">产品</h4>
+                        <a href="/products/mev-self-learning/" class="footer-link">mev-self-learning</a>
+                        <a href="/products/mev-efficiency/" class="footer-link">mev-efficiency</a>
+                        <a href="https://github.com/meta-evo-creator/user-success-perspective" class="footer-link" target="_blank">user-success-perspective</a>
+                        <a href="https://github.com/meta-evo-creator/mev-meta-skill" class="footer-link" target="_blank">mev-meta-skill</a>
                     </div>
                     
-                    <div class="link-group">
-                        <h4 class="link-title">璧勬簮</h4>
-                        <a href="/docs/" class="link-item">鏂囨。</a>
-                        <a href="../docs/getting-started/" class="link-item">蹇€熷紑濮?/a>
-                        <a href="../docs/api/" class="link-item">API鍙傝€?/a>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">资源</h4>
+                        <a href="/docs/" class="footer-link">文档</a>
+                        <a href="https://github.com/meta-evo-creator" class="footer-link" target="_blank">GitHub</a>
+                        <a href="/about/" class="footer-link">关于我们</a>
                     </div>
                     
-                    <div class="link-group">
-                        <h4 class="link-title">鍏充簬</h4>
-                        <a href="/about/" class="link-item">鍝佺墝鐞嗗康</a>
-                        <a href="../about/#contact" class="link-item">鑱旂郴鎴戜滑</a>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">社区</h4>
+                        <a href="https://github.com/meta-evo-creator/meta-evo-website/issues" class="footer-link" target="_blank">反馈问题</a>
+                        <a href="https://github.com/meta-evo-creator/meta-evo-website" class="footer-link" target="_blank">贡献代码</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-legal">
-                    <a href="../privacy/" class="legal-link">闅愮鏀跨瓥</a>
-                    <a href="../terms/" class="legal-link">浣跨敤鏉℃</a>
-                </div>
-                
-                <div class="footer-social">
-                    <span>鍏虫敞鎴戜滑:</span>
-                    <a href="https://github.com/meta-evo" class="social-link" aria-label="GitHub">GitHub</a>
-                </div>
+                <p class="copyright">&copy; 2026 MetaEvo. 保留所有权利。</p>
+                <p class="footer-note">让AI具备自我学习、自我进化、自我产品化的能力。</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="/assets/js/main.js"></script>
-    
-    <!-- 浜у搧椤甸潰鐗瑰畾鑴氭湰 -->
-    <script>
-        // 浜у搧鍗＄墖浜や簰
-        document.addEventListener('DOMContentLoaded', function() {
-            const productCards = document.querySelectorAll('.product-card');
-            
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = 'var(--shadow-xl)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = 'var(--shadow-md)';
-                });
-            });
-            
-            // 鐗规€ц〃鏍间氦浜?            const tableRows = document.querySelectorAll('.table-row');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = 'var(--color-gray-200)';
-                });
-                
-                row.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '';
-                });
-            });
-        });
-    </script>
+    <!-- 脚本 -->
+    <script src="/assets/js/language-switcher.js"></script>
+    <script src="/assets/js/products.js"></script>
 </body>
 </html>

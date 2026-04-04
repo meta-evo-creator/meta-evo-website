@@ -1,220 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鏂囨。 - MetaEvo</title>
-    <meta name="description" content="MetaEvo mev鎶€鑳藉畬鏁存枃妗ｏ紝鍖呭惈蹇€熷紑濮嬫寚鍗椼€丄PI鍙傝€冦€佹渶浣冲疄璺靛拰鏁呴殰鎺掗櫎銆?>
+    <title>文档 - MetaEvo</title>
+    <meta name="description" content="MetaEvo 技能文档和使用指南。">
     
-    <!-- 鍏变韩鏍峰紡鍜岃祫婧?-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/docs.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-    
-    <!-- 鏂囨。椤甸潰鐗瑰畾鏍峰紡 -->
-    <style>
-        .docs-container {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .docs-sidebar {
-            position: sticky;
-            top: 6rem;
-            height: fit-content;
-        }
-        
-        .docs-nav {
-            background: var(--color-gray-100);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-        }
-        
-        .nav-section {
-            margin-bottom: 1.5rem;
-        }
-        
-        .nav-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .nav-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-gray-600);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            color: var(--color-gray-700);
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            transition: all 0.2s ease;
-        }
-        
-        .nav-link:hover {
-            background: var(--color-gray-200);
-            color: var(--color-primary);
-        }
-        
-        .nav-link.active {
-            background: var(--color-primary);
-            color: white;
-            font-weight: 500;
-        }
-        
-        .nav-icon {
-            font-size: 1.125rem;
-        }
-        
-        .docs-content {
-            max-width: 800px;
-        }
-        
-        .docs-hero {
-            margin-bottom: 3rem;
-        }
-        
-        .docs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .doc-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            border: 1px solid var(--color-gray-200);
-            transition: all 0.3s ease;
-        }
-        
-        .doc-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--color-primary);
-        }
-        
-        .doc-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .doc-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--color-gray-900);
-        }
-        
-        .doc-description {
-            color: var(--color-gray-600);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .doc-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: gap 0.2s ease;
-        }
-        
-        .doc-link:hover {
-            gap: 0.75rem;
-        }
-        
-        .arrow-icon {
-            transition: transform 0.2s ease;
-        }
-        
-        .doc-link:hover .arrow-icon {
-            transform: translateX(4px);
-        }
-        
-        .api-section {
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .api-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--color-gray-900);
-        }
-        
-        .api-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .api-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background: white;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-gray-200);
-        }
-        
-        .api-name {
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 0.875rem;
-            color: var(--color-gray-800);
-        }
-        
-        .api-version {
-            font-size: 0.75rem;
-            color: var(--color-gray-500);
-            background: var(--color-gray-100);
-            padding: 0.25rem 0.5rem;
-            border-radius: var(--radius-sm);
-        }
-        
-        @media (max-width: 768px) {
-            .docs-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .docs-sidebar {
-                position: static;
-                margin-bottom: 2rem;
-            }
-            
-            .docs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- 瀵艰埅鏍?-->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -225,271 +25,101 @@
             </div>
             
             <div class="nav-menu">
-                <a href="/" class="nav-link">棣栭〉</a>
-                <a href="/products/" class="nav-link">浜у搧</a>
-                <a href="/" class="nav-link active">鏂囨。</a>
-                <a href="/about/" class="nav-link">鍏充簬</a>
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link">产品</a>
+                <a href="/docs/" class="nav-link active">文档</a>
+                <a href="/about/" class="nav-link">关于</a>
             </div>
             
             <div class="nav-actions">
-                <a href="./getting-started/" class="btn btn-primary">蹇€熷紑濮?/a>
+                <button class="btn btn-outline" id="language-toggle">EN</button>
             </div>
-            
-            <button class="nav-toggle" aria-label="鑿滃崟">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- 鏂囨。涓诲唴瀹?-->
-    <main class="container">
-        <div class="docs-container">
-            <!-- 渚ц竟鏍忓鑸?-->
-            <aside class="docs-sidebar">
-                <div class="docs-nav">
-                    <div class="nav-section">
-                        <div class="nav-title">寮€濮嬩娇鐢?/div>
-                        <div class="nav-links">
-                            <a href="./getting-started/" class="nav-link active">
-                                <span class="nav-icon">馃殌</span>
-                                <span>蹇€熷紑濮?/span>
-                            </a>
-                            <a href="./installation/" class="nav-link">
-                                <span class="nav-icon">馃摝</span>
-                                <span>瀹夎鎸囧崡</span>
-                            </a>
-                            <a href="./configuration/" class="nav-link">
-                                <span class="nav-icon">鈿欙笍</span>
-                                <span>閰嶇疆璇存槑</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-section">
-                        <div class="nav-title">鏍稿績鎶€鑳?/div>
-                        <div class="nav-links">
-                            <a href="/products/mev-self-learning/">
-                                <span class="nav-icon">馃</span>
-                                <span>mev-self-learning</span>
-                            </a>
-                            <a href="/products/mev-efficiency/">
-                                <span class="nav-icon">鈿?/span>
-                                <span>mev-efficiency</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-section">
-                        <div class="nav-title">API鍙傝€?/div>
-                        <div class="nav-links">
-                            <a href="./api/" class="nav-link">
-                                <span class="nav-icon">馃敡</span>
-                                <span>API鎬昏</span>
-                            </a>
-                            <a href="./api/self-learning/" class="nav-link">
-                                <span class="nav-icon">馃</span>
-                                <span>鑷垜瀛︿範API</span>
-                            </a>
-                            <a href="./api/efficiency/" class="nav-link">
-                                <span class="nav-icon">鈿?/span>
-                                <span>鏁堢巼浼樺寲API</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-section">
-                        <div class="nav-title">杩涢樁鎸囧崡</div>
-                        <div class="nav-links">
-                            <a href="./best-practices/" class="nav-link">
-                                <span class="nav-icon">馃専</span>
-                                <span>鏈€浣冲疄璺?/span>
-                            </a>
-                            <a href="./troubleshooting/" class="nav-link">
-                                <span class="nav-icon">馃敡</span>
-                                <span>鏁呴殰鎺掗櫎</span>
-                            </a>
-                            <a href="./faq/" class="nav-link">
-                                <span class="nav-icon">鉂?/span>
-                                <span>甯歌闂</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+    <main class="docs-page">
+        <section class="docs-hero">
+            <div class="container">
+                <h1 class="docs-title">MetaEvo 文档</h1>
+                <p class="docs-subtitle">学习如何使用 MetaEvo 技能，提升AI助手能力</p>
+            </div>
+        </section>
 
-            <!-- 鏂囨。鍐呭 -->
-            <div class="docs-content">
-                <div class="docs-hero">
-                    <h1 class="hero-title">
-                        <span class="gradient-text">MetaEvo 鏂囨。</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        瀹屾暣鐨刴ev鎶€鑳藉紑鍙戞寚鍗椼€丄PI鍙傝€冨拰鏈€浣冲疄璺?                    </p>
-                    <p class="hero-description">
-                        浠庤繖閲屽紑濮嬫偍鐨凪etaEvo涔嬫梾锛屼簡瑙ｅ浣曞厖鍒嗗埄鐢╩ev-self-learning鍜宮ev-efficiency鎶€鑳斤紝
-                        鎻愬崌AI寮€鍙戞晥鐜囷紝瀹炵幇鎸佺画鑷垜杩涘寲銆?                    </p>
-                </div>
-
-                <!-- 鏂囨。鍗＄墖缃戞牸 -->
+        <section class="docs-content">
+            <div class="container">
                 <div class="docs-grid">
-                    <div class="doc-card">
-                        <div class="doc-icon">馃殌</div>
-                        <h3 class="doc-title">蹇€熷紑濮?/h3>
-                        <p class="doc-description">
-                            鍦?鍒嗛挓鍐呭惎鍔ㄥ苟杩愯鎮ㄧ殑绗竴涓猰ev鎶€鑳藉簲鐢ㄣ€?                            鍖呭惈鍩虹閰嶇疆銆佺畝鍗曠ず渚嬪拰绔嬪嵆涓婃墜鎸囧崡銆?                        </p>
-                        <a href="./getting-started/" class="doc-link">
-                            寮€濮嬪涔?                            <span class="arrow-icon">鈫?/span>
-                        </a>
+                    <div class="docs-card">
+                        <h3>快速开始</h3>
+                        <p>了解如何安装和使用 MetaEvo 技能。</p>
+                        <a href="/docs/quick-start/" class="docs-link">查看指南 →</a>
                     </div>
                     
-                    <div class="doc-card">
-                        <div class="doc-icon">馃</div>
-                        <h3 class="doc-title">mev-self-learning</h3>
-                        <p class="doc-description">
-                            AI鑷垜瀛︿範杩涘寲鎶€鑳藉畬鏁存寚鍗椼€?                            瀛︿範濡備綍閰嶇疆銆佽缁冨拰浼樺寲鑷垜瀛︿範妯″瀷銆?                        </p>
-                        <a href="/products/mev-self-learning/">
-                            鏌ョ湅璇︽儏
-                            <span class="arrow-icon">鈫?/span>
-                        </a>
+                    <div class="docs-card">
+                        <h3>mev-self-learning</h3>
+                        <p>AI自我学习进化技能详细文档。</p>
+                        <a href="/docs/api/self-learning/" class="docs-link">API文档 →</a>
                     </div>
                     
-                    <div class="doc-card">
-                        <div class="doc-icon">鈿?/div>
-                        <h3 class="doc-title">mev-efficiency</h3>
-                        <p class="doc-description">
-                            寮€鍙戞晥鐜囧苟琛屽伐绋嬫妧鑳藉畬鏁存枃妗ｃ€?                            瀛︿範濡備綍搴旂敤WBS鍒嗚В鍜屽苟琛屼紭鍖栨彁鍗囧伐浣滄晥鐜囥€?                        </p>
-                        <a href="/products/mev-efficiency/">
-                            鏌ョ湅璇︽儏
-                            <span class="arrow-icon">鈫?/span>
-                        </a>
+                    <div class="docs-card">
+                        <h3>mev-efficiency</h3>
+                        <p>开发效率并行工程技能详细文档。</p>
+                        <a href="/docs/api/efficiency/" class="docs-link">API文档 →</a>
                     </div>
-                </div>
-
-                <!-- API姒傝 -->
-                <div class="api-section">
-                    <h2 class="api-title">API鍙傝€?/h2>
-                    <div class="api-list">
-                        <div class="api-item">
-                            <span class="api-name">mev.self_learning.train()</span>
-                            <span class="api-version">v1.0</span>
-                        </div>
-                        <div class="api-item">
-                            <span class="api-name">mev.self_learning.optimize()</span>
-                            <span class="api-version">v1.0</span>
-                        </div>
-                        <div class="api-item">
-                            <span class="api-name">mev.efficiency.analyze()</span>
-                            <span class="api-version">v1.0</span>
-                        </div>
-                        <div class="api-item">
-                            <span class="api-name">mev.efficiency.plan()</span>
-                            <span class="api-version">v1.0</span>
-                        </div>
-                        <div class="api-item">
-                            <span class="api-name">mev.efficiency.execute()</span>
-                            <span class="api-version">v1.0</span>
-                        </div>
+                    
+                    <div class="docs-card">
+                        <h3>最佳实践</h3>
+                        <p>使用 MetaEvo 技能的最佳实践和案例。</p>
+                        <a href="/docs/best-practices/" class="docs-link">查看案例 →</a>
                     </div>
-                </div>
-
-                <!-- 涓嬩竴姝ヨ鍔?-->
-                <div class="cta-section" style="background: transparent; padding: 0;">
-                    <div class="cta-content">
-                        <h2 class="cta-title">鍑嗗濂藉紑濮嬩簡鍚楋紵</h2>
-                        <p class="cta-description">
-                            閫夋嫨鏈€閫傚悎鎮ㄩ渶姹傜殑鍏ラ棬璺緞锛屽紑濮嬫偍鐨凪etaEvo涔嬫梾銆?                        </p>
-                        <div class="cta-actions">
-                            <a href="./getting-started/" class="btn btn-primary btn-large">蹇€熷紑濮嬫寚鍗?/a>
-                            <a href="/products/" class="btn btn-outline btn-large">鏌ョ湅鎵€鏈変骇鍝?/a>
-                        </div>
+                    
+                    <div class="docs-card">
+                        <h3>故障排除</h3>
+                        <p>常见问题解答和故障排除指南。</p>
+                        <a href="/docs/troubleshooting/" class="docs-link">解决问题 →</a>
+                    </div>
+                    
+                    <div class="docs-card">
+                        <h3>贡献指南</h3>
+                        <p>如何为 MetaEvo 项目贡献代码。</p>
+                        <a href="https://github.com/meta-evo-creator/meta-evo-website" class="docs-link" target="_blank">GitHub →</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- 椤佃剼 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <span class="logo-icon">MEV</span>
                         <span class="logo-text">MetaEvo</span>
                     </a>
-                    <p class="footer-tagline">
-                        杩涘寲杩涘寲鐨勮繘鍖?                    </p>
-                    <p class="footer-copyright">
-                        漏 2026 MetaEvo Technologies. 淇濈暀鎵€鏈夋潈鍒┿€?                    </p>
+                    <p class="footer-tagline">进化进化的进化</p>
                 </div>
                 
                 <div class="footer-links">
-                    <div class="link-group">
-                        <h4 class="link-title">浜у搧</h4>
-                        <a href="/products/mev-self-learning/">mev-self-learning</a>
-                        <a href="/products/mev-efficiency/">mev-efficiency</a>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">产品</h4>
+                        <a href="/products/mev-self-learning/" class="footer-link">mev-self-learning</a>
+                        <a href="/products/mev-efficiency/" class="footer-link">mev-efficiency</a>
                     </div>
                     
-                    <div class="link-group">
-                        <h4 class="link-title">鏂囨。</h4>
-                        <a href="./getting-started/" class="link-item">蹇€熷紑濮?/a>
-                        <a href="./api/" class="link-item">API鍙傝€?/a>
-                        <a href="./best-practices/" class="link-item">鏈€浣冲疄璺?/a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4 class="link-title">鍏充簬</h4>
-                        <a href="/about/" class="link-item">鍝佺墝鐞嗗康</a>
-                        <a href="../about/#contact" class="link-item">鑱旂郴鎴戜滑</a>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">资源</h4>
+                        <a href="/docs/" class="footer-link">文档</a>
+                        <a href="https://github.com/meta-evo-creator" class="footer-link" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-legal">
-                    <a href="../privacy/" class="legal-link">闅愮鏀跨瓥</a>
-                    <a href="../terms/" class="legal-link">浣跨敤鏉℃</a>
-                </div>
-                
-                <div class="footer-social">
-                    <span>鍏虫敞鎴戜滑:</span>
-                    <a href="https://github.com/meta-evo" class="social-link" aria-label="GitHub">GitHub</a>
-                </div>
+                <p class="copyright">&copy; 2026 MetaEvo. 保留所有权利。</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="/assets/js/main.js"></script>
-    
-    <!-- 鏂囨。椤甸潰鐗瑰畾鑴氭湰 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 瀵艰埅閾炬帴婵€娲荤姸鎬?            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPath.split('/').pop() || 
-                    (currentPath.includes('getting-started') && link.getAttribute('href') === './getting-started/')) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // 鏂囨。鍗＄墖浜や簰
-            const docCards = document.querySelectorAll('.doc-card');
-            docCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // API椤圭洰浜や簰
-            const apiItems = document.querySelectorAll('.api-item');
-            apiItems.forEach(item => {
-                item.addEventListener('click
+    <script src="/assets/js/language-switcher.js"></script>
+</body>
+</html>

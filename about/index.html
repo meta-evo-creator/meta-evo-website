@@ -1,304 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鍏充簬 - MetaEvo</title>
-    <meta name="description" content="浜嗚ВMetaEvo鐨勫搧鐗岀悊蹇点€佷娇鍛芥効鏅拰鍥㈤槦鏁呬簨銆傝繘鍖栬繘鍖栫殑杩涘寲銆?>
+    <title>关于 - MetaEvo</title>
+    <meta name="description" content="关于 MetaEvo 项目和愿景。">
     
-    <!-- 鍏变韩鏍峰紡鍜岃祫婧?-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-    
-    <!-- 鍏充簬椤甸潰鐗瑰畾鏍峰紡 -->
-    <style>
-        .about-hero {
-            padding: 6rem 0 4rem;
-            text-align: center;
-        }
-        
-        .mission-section {
-            padding: 4rem 0;
-            background: var(--color-gray-50);
-        }
-        
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .mission-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--color-gray-200);
-            transition: all 0.3s ease;
-        }
-        
-        .mission-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--color-primary);
-        }
-        
-        .mission-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .mission-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--color-gray-900);
-        }
-        
-        .mission-description {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-        
-        .story-section {
-            padding: 4rem 0;
-        }
-        
-        .story-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-        
-        .story-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--color-gray-300);
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: calc(50% - 2rem);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            margin-left: auto;
-            padding-left: 2rem;
-        }
-        
-        .timeline-item:nth-child(even) {
-            margin-right: auto;
-            padding-right: 2rem;
-            text-align: right;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            top: 0;
-            width: 1rem;
-            height: 1rem;
-            background: var(--color-primary);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--color-primary-light);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-dot {
-            left: -0.5rem;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-dot {
-            right: -0.5rem;
-        }
-        
-        .timeline-date {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--color-gray-900);
-        }
-        
-        .timeline-description {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-        
-        .values-section {
-            padding: 4rem 0;
-            background: var(--color-gray-50);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .value-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--color-gray-200);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .value-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--color-gray-900);
-        }
-        
-        .value-description {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-        
-        .team-section {
-            padding: 4rem 0;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .team-card {
-            text-align: center;
-        }
-        
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .team-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--color-gray-900);
-        }
-        
-        .team-role {
-            font-size: 0.875rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .team-bio {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-section {
-            padding: 4rem 0;
-            background: var(--color-gray-50);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--color-gray-200);
-        }
-        
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--color-gray-900);
-        }
-        
-        .contact-info {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-        
-        .contact-link {
-            color: var(--color-primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .contact-link:hover {
-            color: var(--color-primary-dark);
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-item {
-                width: 100%;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding-left: 2rem !important;
-                padding-right: 0 !important;
-                text-align: left !important;
-            }
-            
-            .story-timeline::before {
-                left: 1rem;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-dot,
-            .timeline-item:nth-child(even) .timeline-dot {
-                left: 0.5rem;
-                right: auto;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- 瀵艰埅鏍?-->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -309,209 +25,112 @@
             </div>
             
             <div class="nav-menu">
-                <a href="/" class="nav-link">棣栭〉</a>
-                <a href="/products/" class="nav-link">浜у搧</a>
-                <a href="/docs/" class="nav-link">鏂囨。</a>
-                <a href="/" class="nav-link active">鍏充簬</a>
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link">产品</a>
+                <a href="/docs/" class="nav-link">文档</a>
+                <a href="/about/" class="nav-link active">关于</a>
             </div>
             
             <div class="nav-actions">
-                <a href="../docs/getting-started/" class="btn btn-primary">寮€濮嬩娇鐢?/a>
+                <button class="btn btn-outline" id="language-toggle">EN</button>
             </div>
-            
-            <button class="nav-toggle" aria-label="鑿滃崟">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- 鍏充簬鑻遍泟鍖哄煙 -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">鍏充簬 MetaEvo</span>
-                </h1>
-                <p class="hero-subtitle">
-                    杩涘寲杩涘寲鐨勮繘鍖?                </p>
-                <p class="hero-description">
-                    鎴戜滑鑷村姏浜庢帹鍔ˋI鎶€鏈殑鑷垜杩涘寲锛岄€氳繃mev绯诲垪鎶€鑳斤紝
-                    璁〢I绯荤粺鑳藉鎸佺画瀛︿範銆佷紭鍖栧拰鎻愬崌锛屽疄鐜扮湡姝ｇ殑鏅鸿兘杩涘寲銆?                </p>
+    <main class="about-page">
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-title">关于 MetaEvo</h1>
+                <p class="about-subtitle">进化进化的进化</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 浣垮懡鎰挎櫙 -->
-    <section class="mission-section">
+        <section class="about-content">
+            <div class="container">
+                <div class="about-section">
+                    <h2>我们的愿景</h2>
+                    <p>让AI具备自我学习、自我进化、自我产品化的能力。</p>
+                    <p>我们相信AI不应该是一次性训练的产品，而应该具备持续学习和进化的能力。</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>我们的使命</h2>
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <div class="mission-icon">🧠</div>
+                            <h3>持续进化</h3>
+                            <p>AI应该具备从经验中学习、改进和进化的能力。</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-icon">🤝</div>
+                            <h3>协同增效</h3>
+                            <p>AI与人类协同工作，各自发挥优势，创造超越单独能力的价值。</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-icon">🔧</div>
+                            <h3>实用导向</h3>
+                            <p>一切技术发展都以解决实际问题为目标，理论创新必须转化为实际应用。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h2>我们的产品</h2>
+                    <p>MetaEvo 提供一系列AI助手技能，帮助AI更好地学习和工作：</p>
+                    <ul class="product-list">
+                        <li><strong>mev-self-learning</strong>: AI自我学习进化技能</li>
+                        <li><strong>mev-efficiency</strong>: 开发效率并行工程技能</li>
+                        <li><strong>user-success-perspective</strong>: 用户视角成功率提升技能</li>
+                        <li><strong>mev-meta-skill</strong>: mev技能套件包装器</li>
+                    </ul>
+                </div>
+                
+                <div class="about-section">
+                    <h2>加入我们</h2>
+                    <p>如果您对我们的项目感兴趣，欢迎：</p>
+                    <div class="join-actions">
+                        <a href="https://github.com/meta-evo-creator" class="btn btn-primary" target="_blank">访问 GitHub</a>
+                        <a href="https://github.com/meta-evo-creator/meta-evo-website/issues" class="btn btn-outline" target="_blank">提交反馈</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">浣垮懡涓庢効鏅?/h2>
-                <p class="section-subtitle">鎴戜滑涓轰綍瀛樺湪锛屾垜浠皢鍘诲悜浣曟柟</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">MEV</span>
+                        <span class="logo-text">MetaEvo</span>
+                    </a>
+                    <p class="footer-tagline">进化进化的进化</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">产品</h4>
+                        <a href="/products/mev-self-learning/" class="footer-link">mev-self-learning</a>
+                        <a href="/products/mev-efficiency/" class="footer-link">mev-efficiency</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-heading">资源</h4>
+                        <a href="/docs/" class="footer-link">文档</a>
+                        <a href="https://github.com/meta-evo-creator" class="footer-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
             </div>
             
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <div class="mission-icon">馃幆</div>
-                    <h3 class="mission-title">浣垮懡</h3>
-                    <p class="mission-description">
-                        鎺ㄥ姩AI鎶€鏈殑鑷垜杩涘寲锛岃姣忎釜AI绯荤粺閮借兘鎸佺画瀛︿範銆?                        鑷富浼樺寲銆佷笉鏂彁鍗囷紝瀹炵幇鐪熸鐨勬櫤鑳芥垚闀裤€?                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <div class="mission-icon">馃殌</div>
-                    <h3 class="mission-title">鎰挎櫙</h3>
-                    <p class="mission-description">
-                        鏋勫缓涓€涓狝I鑷垜杩涘寲鐨勭敓鎬佺郴缁燂紝璁╂櫤鑳界郴缁熷儚鐢熺墿涓€鏍?                        鑷劧杩涘寲锛屾寔缁€傚簲鍙樺寲锛屽垱閫犳洿澶т环鍊笺€?                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <div class="mission-icon">馃挕</div>
-                    <h3 class="mission-title">鐞嗗康</h3>
-                    <p class="mission-description">
-                        杩涘寲涓嶆槸缁堢偣锛岃€屾槸杩囩▼銆傜湡姝ｇ殑鏅鸿兘鍦ㄤ簬鎸佺画鏀硅繘銆?                        涓嶆柇浼樺寲銆佹案涓嶆姝ョ殑杩涘寲鑳藉姏銆?                    </p>
-                </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 MetaEvo. 保留所有权利。</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- 鍝佺墝鏁呬簨 -->
-    <section class="story-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">鍝佺墝鏁呬簨</h2>
-                <p class="section-subtitle">MetaEvo鐨勮捣婧愪笌鍙戝睍</p>
-            </div>
-            
-            <div class="story-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025骞?2鏈?/div>
-                    <h3 class="timeline-title">鐞嗗康璇炵敓</h3>
-                    <p class="timeline-description">
-                        鍦ㄦ繁鍏ョ爺绌禔I绯荤粺灞€闄愭€у悗锛屾垜浠剰璇嗗埌锛?                        鐪熸鐨勬櫤鑳戒笉鍦ㄤ簬涓€娆℃€ц缁冿紝鑰屽湪浜庢寔缁繘鍖栫殑鑳藉姏銆?                    </p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026骞?鏈?/div>
-                    <h3 class="timeline-title">鎶€鏈帰绱?/h3>
-                    <p class="timeline-description">
-                        寮€濮嬬爺鍙憁ev-self-learning鍘熷瀷锛屾帰绱I鑷垜瀛︿範
-                        鍜屾寔缁紭鍖栫殑鎶€鏈矾寰勩€?                    </p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026骞?鏈?/div>
-                    <h3 class="timeline-title">鏁堢巼绐佺牬</h3>
-                    <p class="timeline-date">2026骞?鏈?/div>
-                    <h3 class="timeline-title">鏁堢巼绐佺牬</h3>
-                    <p class="timeline-description">
-                        寮€鍙憁ev-efficiency鎶€鑳斤紝灏哤BS鍜屽苟琛屽伐绋嬫柟娉?                        搴旂敤浜嶢I寮€鍙戯紝鏄捐憲鎻愬崌宸ヤ綔鏁堢巼銆?                    </p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026骞?鏈?/div>
-                    <h3 class="timeline-title">鍝佺墝寤虹珛</h3>
-                    <p class="timeline-description">
-                        姝ｅ紡纭珛MetaEvo鍝佺墝锛屽畾涔?杩涘寲杩涘寲鐨勮繘鍖?鏍稿績鐞嗗康锛?                        寮€濮嬫瀯寤哄畬鏁寸殑浜у搧浣撶郴銆?                    </p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026骞?鏈?/div>
-                    <h3 class="timeline-title">姝ｅ紡浜浉</h3>
-                    <p class="timeline-description">
-                        MetaEvo瀹樻柟缃戠珯涓婄嚎锛宮ev绯诲垪鎶€鑳芥寮忓彂甯冿紝
-                        寮€鍚疉I鑷垜杩涘寲鐨勬柊绡囩珷銆?                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 鏍稿績浠峰€艰 -->
-    <section class="values-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">鏍稿績浠峰€艰</h2>
-                <p class="section-subtitle">鎸囧鎴戜滑琛屽姩鐨勪俊蹇靛拰鍘熷垯</p>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">馃殌</div>
-                    <h3 class="value-title">鎸佺画杩涘寲</h3>
-                    <p class="value-description">
-                        鎴戜滑鐩镐俊杩涘寲姘告棤姝㈠锛屾瘡涓郴缁熴€?                        姣忎釜涓綋閮藉簲鎸佺画鏀硅繘銆佷笉鏂紭鍖栥€?                    </p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">馃</div>
-                    <h3 class="value-title">鍗忓悓鍒涙柊</h3>
-                    <p class="value-description">
-                        閫氳繃AI涓庝汉绫荤殑鍗忓悓锛屽垱閫犺秴瓒婂崟鐙兘鍔涚殑
-                        鍒涙柊鎴愭灉鍜屼环鍊笺€?                    </p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">馃幆</div>
-                    <h3 class="value-title">浠峰€煎鍚?/h3>
-                    <p class="value-description">
-                        涓€鍒囨妧鏈彂灞曢兘浠ュ垱閫犲疄闄呬环鍊间负鐩爣锛?                        瑙ｅ喅鐪熷疄闂锛屾弧瓒冲疄闄呴渶姹傘€?                    </p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">馃敡</div>
-                    <h3 class="value-title">瀹炵敤涓讳箟</h3>
-                    <p class="value-description">
-                        鎶€鏈繀椤诲疄鐢ㄣ€佸彲鐢ㄣ€佹槗鐢紝
-                        鐞嗚鍒涙柊蹇呴』杞寲涓哄疄闄呭簲鐢ㄣ€?                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 鍥㈤槦浠嬬粛 -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">鍒涘鍥㈤槦</h2>
-                <p class="section-subtitle">鎺ㄥ姩AI杩涘寲鐨勬ⅵ鎯冲涓庡疄骞插</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">澶у北</div>
-                    <h3 class="team-name">澶у北</h3>
-                    <div class="team-role">鍒涘浜?& 鎴樼暐鎬荤洃</div>
-                    <p class="team-bio">
-                        鎷ユ湁澶氬勾AI鎶€鏈爺绌跺拰浜у搧缁忛獙锛?                        鍧氫俊AI鐨勭粓鏋佷环鍊煎湪浜庢寔缁繘鍖栬兘鍔涖€?                        涓诲MetaEvo鍝佺墝鎴樼暐鍜屾妧鏈柟鍚戙€?                    </p>
-                </div>
-                
-                <div class="team-card">
-                    <div class="team-avatar">MEV</div>
-                    <h3 class="team-name">mev鏅鸿兘浣?/h3>
-                    <div class="team-role">棣栧腑鎶€鏈畼</div>
-                    <p class="team-bio">
-                        鍩轰簬mev-self-learning鍜宮ev-efficiency鎶€鑳?                        鏋勫缓鐨勬櫤鑳界郴缁燂紝璐熻矗鎶€鏈疄鐜般€佹寔缁紭鍖?                        鍜屾晥鐜囨彁鍗囥€?                    </p>
-                </div>
-                
-                <div class="team-card">
-                    <div class="team-avatar">馃寪</div>
-                    <h3 class="team-name">寮€婧愮ぞ鍖?/h3>
-                    <div class="team-role">鍗忎綔缃戠粶</div>
-                    <p class="team-bio">
-                        鍏ㄧ悆寮€鍙戣€呭拰鐮旂┒鑰呯殑鏅烘収姹囪仛锛?                        鍏卞悓鎺ㄥ姩AI杩涘寲鎶€鏈殑鍙戝睍鍜屽簲鐢ㄣ€?                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 鑱旂郴鎴戜滑 -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class
+    <script src="/assets/js/language-switcher.js"></script>
+</body>
+</html>
