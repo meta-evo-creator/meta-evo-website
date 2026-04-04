@@ -1,0 +1,196 @@
+{
+  "zh-CN": {
+    "nav": {
+      "home": "首页",
+      "products": "产品",
+      "docs": "文档",
+      "blog": "博客",
+      "about": "关于",
+      "contact": "联系",
+      "language": "语言"
+    },
+    "hero": {
+      "title": "MetaEvo - 进化进化的进化",
+      "subtitle": "让AI具备自我学习、自我进化、自我产品化的能力",
+      "description": "探索 mev-self-learning 和 mev-efficiency 技能，构建智能、高效的AI助手生态系统。",
+      "cta": {
+        "primary": "开始探索",
+        "secondary": "查看文档"
+      }
+    },
+    "products": {
+      "title": "mev 技能系列",
+      "subtitle": "构建完整的AI助手能力生态"
+    },
+    "product": {
+      "self-learning": {
+        "title": "mev-self-learning",
+        "subtitle": "AI自我学习和进化技能",
+        "description": "让AI助手能够自我诊断、学习、封装新技能，实现持续进化。",
+        "features": "核心功能",
+        "feature1": "自我诊断能力短板",
+        "feature2": "设计个性化学习路径",
+        "feature3": "技能封装和标准化",
+        "feature4": "进化监控和优化",
+        "stats": "性能指标",
+        "stat1": "学习效率提升 80%",
+        "stat2": "每周创建 2-3 个新技能",
+        "stat3": "用户满意度 4.8/5.0",
+        "cta": "GitHub 查看"
+      },
+      "efficiency": {
+        "title": "mev-efficiency",
+        "subtitle": "开发效率并行工程技能",
+        "description": "智能并行任务规划，显著提升开发工作效率和资源利用率。",
+        "features": "核心功能",
+        "feature1": "智能并行任务规划",
+        "feature2": "系统资源优化分配",
+        "feature3": "WBS科学任务分解",
+        "feature4": "动态执行优化",
+        "stats": "实际效果",
+        "stat1": "效率提升 89-94%",
+        "stat2": "时间节省 16-24小时 → 87分钟",
+        "stat3": "资源利用率 92%",
+        "cta": "GitHub 查看"
+      }
+    },
+    "ecosystem": {
+      "title": "生态协同价值",
+      "description": "两个技能形成完整的价值闭环，实现指数级增长。",
+      "value1": {
+        "title": "自我进化",
+        "desc": "mev-self-learning 创造新技能的能力"
+      },
+      "value2": {
+        "title": "高效执行",
+        "desc": "mev-efficiency 提升工作效率的技能"
+      },
+      "value3": {
+        "title": "组合效应",
+        "desc": "自我进化 + 高效执行 = 指数级增长"
+      }
+    },
+    "cta": {
+      "title": "加入 MetaEvo 社区",
+      "description": "探索AI自我学习和效率优化的未来，参与开源社区建设。",
+      "button1": "Star on GitHub",
+      "button2": "加入讨论",
+      "button3": "联系我们"
+    },
+    "footer": {
+      "description": "MetaEvo - 推动AI向更自主、更智能的方向发展",
+      "quickLinks": "快速链接",
+      "products": "产品",
+      "docs": "文档",
+      "blog": "博客",
+      "community": "社区",
+      "legal": "法律",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "license": "开源协议",
+      "copyright": "© 2026 MetaEvo Technologies. 保留所有权利。"
+    },
+    "lang": {
+      "zh": "中文",
+      "en": "English",
+      "current": "当前语言"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "docs": "Docs",
+      "blog": "Blog",
+      "about": "About",
+      "contact": "Contact",
+      "language": "Language"
+    },
+    "hero": {
+      "title": "MetaEvo - Evolving Evolution",
+      "subtitle": "Empowering AI with self-learning, self-evolution, and self-productization capabilities",
+      "description": "Explore mev-self-learning and mev-efficiency skills to build intelligent, efficient AI assistant ecosystems.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "View Docs"
+      }
+    },
+    "products": {
+      "title": "mev Skills Series",
+      "subtitle": "Building a complete AI assistant capability ecosystem"
+    },
+    "product": {
+      "self-learning": {
+        "title": "mev-self-learning",
+        "subtitle": "AI Self-Learning and Evolution Skill",
+        "description": "Enables AI assistants to self-diagnose, learn, and encapsulate new skills for continuous evolution.",
+        "features": "Core Features",
+        "feature1": "Self-diagnosis of capability gaps",
+        "feature2": "Personalized learning path design",
+        "feature3": "Skill encapsulation and standardization",
+        "feature4": "Evolution monitoring and optimization",
+        "stats": "Performance Metrics",
+        "stat1": "Learning efficiency improvement: 80%",
+        "stat2": "Skill creation: 2-3 new skills/week",
+        "stat3": "User satisfaction: 4.8/5.0",
+        "cta": "View on GitHub"
+      },
+      "efficiency": {
+        "title": "mev-efficiency",
+        "subtitle": "Development Efficiency Parallel Engineering Skill",
+        "description": "Intelligent parallel task planning significantly improves development efficiency and resource utilization.",
+        "features": "Core Features",
+        "feature1": "Intelligent parallel task planning",
+        "feature2": "System resource optimization",
+        "feature3": "WBS scientific task decomposition",
+        "feature4": "Dynamic execution optimization",
+        "stats": "Real Results",
+        "stat1": "Efficiency improvement: 89-94%",
+        "stat2": "Time saved: 16-24 hours → 87 minutes",
+        "stat3": "Resource utilization: 92%",
+        "cta": "View on GitHub"
+      }
+    },
+    "ecosystem": {
+      "title": "Ecosystem Synergy",
+      "description": "Two skills form a complete value loop for exponential growth.",
+      "value1": {
+        "title": "Self-Evolution",
+        "desc": "mev-self-learning: Ability to create new skills"
+      },
+      "value2": {
+        "title": "Efficient Execution",
+        "desc": "mev-efficiency: Skill to improve work efficiency"
+      },
+      "value3": {
+        "title": "Combined Effect",
+        "desc": "Self-evolution + Efficient execution = Exponential growth"
+      }
+    },
+    "cta": {
+      "title": "Join the MetaEvo Community",
+      "description": "Explore the future of AI self-learning and efficiency optimization, participate in open-source community building.",
+      "button1": "Star on GitHub",
+      "button2": "Join Discussion",
+      "button3": "Contact Us"
+    },
+    "footer": {
+      "description": "MetaEvo - Advancing AI towards greater autonomy and intelligence",
+      "quickLinks": "Quick Links",
+      "products": "Products",
+      "docs": "Docs",
+      "blog": "Blog",
+      "community": "Community",
+      "legal": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "license": "Open Source License",
+      "copyright": "© 2026 MetaEvo Technologies. All rights reserved."
+    },
+    "lang": {
+      "zh": "中文",
+      "en": "English",
+      "current": "Current Language"
+    }
+  }
+}
