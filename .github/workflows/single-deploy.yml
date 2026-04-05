@@ -1,24 +1,20 @@
-name: Deploy to GitHub Pages
+name: Single Deploy to GitHub Pages
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
-# 设置GITHUB_TOKEN权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 允许一个并发的部署
+# 关键：取消其他进行中的部署，避免冲突
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
-# 解决Node.js 20弃用警告
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -31,7 +27,7 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
