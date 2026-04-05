@@ -1,19 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEV 4澶ф妧鑳戒骇鍝?- MetaEvo</title>
-    <meta name="description" content="鎺㈢储MetaEvo MEV 4澶ф妧鑳戒綋绯伙細mev-sense锛堟劅鐭ワ級銆乵ev-think锛堟€濊€冿級銆乵ev-optimize锛堜紭鍖栵級銆乵ev-evolve锛堣繘鍖栵級銆?>
+    <title>MEV 4大技能产品 - MetaEvo</title>
+    <meta name="description" content="探索MetaEvo MEV 4大技能体系：mev-sense（感知）、mev-think（思考）、mev-optimize（优化）、mev-evolve（进化）">
     
-    <!-- 涓栫晫椤跺皷绾ц璁＄郴缁?-->
+    <!-- 世界顶尖设计系统 -->
     <link rel="stylesheet" href="/assets/css/world-class-design.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* 浜у搧椤甸潰涓撳睘鏍峰紡 */
+        /* 产品页面专属样式 */
         .products-hero {
             background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
             color: white;
@@ -29,7 +29,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
         
         .hero-content {
@@ -45,7 +45,7 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #ffffff, #dbeafe);
+            background: linear-gradient(to right, #ffffff, #ddd6fe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -57,626 +57,395 @@
             opacity: 0.9;
         }
         
-        /* 鎶€鑳藉睍绀哄尯鍩?*/
-        .skills-showcase {
+        /* 产品内容区域 */
+        .products-content {
             padding: 4rem 0;
             background: #f9fafb;
         }
         
-        .skill-category {
-            margin-bottom: 3rem;
-        }
-        
-        .category-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .category-title h2 {
-            font-size: 2.5rem;
-            color: #111827;
-            margin-bottom: 0.5rem;
-        }
-        
-        .category-title p {
-            color: #6b7280;
-            max-width: 600px;
+        .products-container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
         
-        /* 鎶€鑳藉崱鐗?*/
-        .skill-card {
+        .products-section {
+            margin-bottom: 4rem;
+            padding: 3rem;
             background: white;
             border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #111827;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #8b5cf6;
+        }
+        
+        /* MEV4产品展示 */
+        .mev4-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .product-card {
+            background: #f8fafc;
+            border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 2px solid transparent;
+            border: 2px solid #e2e8f0;
             transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
         
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border-color: #93c5fd;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #8b5cf6;
         }
         
-        .skill-icon {
+        .product-emoji {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-align: center;
         }
         
-        .skill-header {
-            margin-bottom: 1rem;
-        }
-        
-        .skill-title {
+        .product-name {
             font-size: 1.5rem;
             font-weight: 700;
             color: #111827;
             margin-bottom: 0.5rem;
         }
         
-        .skill-subtitle {
-            color: #2563eb;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .skill-description {
+        .product-version {
             color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            color: #4b5563;
             margin-bottom: 1.5rem;
-            flex-grow: 1;
+            line-height: 1.6;
         }
         
-        .skill-features {
-            margin-bottom: 1.5rem;
+        .product-features {
+            margin: 1.5rem 0;
         }
         
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            padding: 0.5rem 0;
-            color: #374151;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .feature-list li::before {
-            content: '鉁?;
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        
-        .skill-actions {
+        .feature-item {
             display: flex;
-            gap: 0.75rem;
-            margin-top: auto;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #374151;
         }
         
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.5;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+        .feature-icon {
+            margin-right: 0.5rem;
+            color: #8b5cf6;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: #8b5cf6;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            transition: background 0.3s ease;
         }
         
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background: #7c3aed;
         }
         
         .btn-secondary {
-            background: white;
-            color: #1d4ed8;
-            border-color: #bfdbfe;
+            background: #f1f5f9;
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
         }
         
         .btn-secondary:hover {
-            background: #eff6ff;
-            border-color: #93c5fd;
+            background: #e2e8f0;
+            border-color: #cbd5e1;
         }
         
-        /* 缃戞牸绯荤粺 */
-        .grid {
+        /* 应用场景展示 */
+        .use-cases {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
+            margin: 2rem 0;
         }
         
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
+        .use-case {
+            background: #f0f9ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 2px solid #bae6fd;
         }
         
-        .grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        .use-case h4 {
+            color: #0369a1;
+            margin-bottom: 0.75rem;
         }
         
-        .grid-cols-3 {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* 定价区域 */
+        .pricing-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 2rem 0;
         }
         
-        .grid-cols-4 {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .pricing-card.featured {
+            border-color: #8b5cf6;
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.1);
+        }
+        
+        .pricing-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-period {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-features {
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .pricing-feature {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .grid-cols-2,
-            .grid-cols-3,
-            .grid-cols-4 {
-                grid-template-columns: repeat(1, minmax(0, 1fr));
-            }
-            
             .hero-title {
                 font-size: 2.5rem;
             }
             
-            .skill-actions {
-                flex-direction: column;
+            .products-section {
+                padding: 1.5rem;
             }
-        }
-        
-        /* 瀵艰埅鏍?*/
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1d4ed8;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: #6b7280;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            transition: all 0.15s ease;
-        }
-        
-        .nav-link:hover {
-            color: #1d4ed8;
-            background: #eff6ff;
-        }
-        
-        .nav-link.active {
-            color: #1d4ed8;
-            background: #eff6ff;
-        }
-        
-        /* 椤佃剼 */
-        .footer {
-            background: #111827;
-            color: #d1d5db;
-            padding: 3rem 0;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.15s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        /* 鍔ㄧ敾 */
-        .fade-in {
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+            
+            .mev4-products {
+                grid-template-columns: 1fr;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 瀵艰埅鏍?-->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span style="color: #1d4ed8; font-weight: 800;">MEV</span>
-                <span style="color: #374151;">MetaEvo</span>
-            </a>
-            
-            <div class="nav-menu">
-                <a href="/" class="nav-link">棣栭〉</a>
-                <a href="/products/" class="nav-link active">浜у搧</a>
-                <a href="/docs/" class="nav-link">鏂囨。</a>
-                <a href="/about/" class="nav-link">鍏充簬</a>
-                
-                <!-- 璇█鍒囨崲 -->
-                <div class="language-switcher" style="display: flex; gap: 0.5rem;">
-                    <button class="lang-btn active" onclick="switchLanguage('zh-CN')" style="padding: 0.5rem 1rem; border: 2px solid #2563eb; background: #2563eb; color: white; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">涓枃</button>
-                    <button class="lang-btn" onclick="switchLanguage('en')" style="padding: 0.5rem 1rem; border: 2px solid #bfdbfe; background: transparent; color: #2563eb; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">English</button>
-                </div>
+    <!-- 导航栏 -->
+    <nav style="background: #0f172a; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="color: white; text-decoration: none; font-weight: 700; font-size: 1.5rem;">MEV | MetaEvo</a>
+            <div style="display: flex; gap: 2rem;">
+                <a href="/" style="color: #cbd5e1; text-decoration: none;">首页</a>
+                <a href="/products/" style="color: white; text-decoration: none; font-weight: 600;">产品</a>
+                <a href="/docs/" style="color: #cbd5e1; text-decoration: none;">文档</a>
+                <a href="/about/" style="color: #cbd5e1; text-decoration: none;">关于</a>
+            </div>
+            <div>
+                <button class="lang-btn" style="background: #1e293b; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; cursor: pointer;">中文</button>
+                <button class="lang-btn" style="background: transparent; color: #94a3b8; border: 1px solid #475569; padding: 0.5rem 1rem; border-radius: 0.5rem; cursor: pointer;">English</button>
             </div>
         </div>
     </nav>
 
-    <!-- 鑻遍泟鍖哄煙 -->
+    <!-- 英雄区域 -->
     <section class="products-hero">
-        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-            <div class="hero-content">
-                <h1 class="hero-title">MEV 4澶ф妧鑳戒骇鍝?/h1>
-                <p class="hero-subtitle">璁〢I鍔╂墜鍏峰绫讳汉鎰熺煡銆佷富鍔ㄦ€濊€冦€佺郴缁熶紭鍖栥€佹寔缁繘鍖栫殑瀹屾暣鑳藉姏浣撶郴</p>
-                <div style="margin-top: 2rem;">
-                    <a href="#skills" class="btn btn-primary" style="background: white; color: #1d4ed8;">
-                        鎺㈢储鎶€鑳戒綋绯?                    </a>
-                    <a href="#synergy" class="btn btn-secondary" style="background: transparent; border-color: white; color: white;">
-                        浜嗚В鍗忓悓鏁堝簲
-                    </a>
-                </div>
+        <div class="hero-content">
+            <h1 class="hero-title">MEV 4大技能产品</h1>
+            <p class="hero-subtitle">完整的MEV 4大技能体系，让AI助手从被动工具转变为主动合作伙伴</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#mev4" style="background: white; color: #2563eb; padding: 1rem 2rem; border-radius: 0.75rem; text-decoration: none; font-weight: 600;">探索技能</a>
+                <a href="#pricing" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 0.75rem; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.3);">查看定价</a>
             </div>
         </div>
     </section>
 
-    <!-- MEV 4澶ф妧鑳藉睍绀?-->
-    <section class="skills-showcase" id="skills">
-        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-            <div class="category-title">
-                <h2>馃鈿○煈侊笍馃攧 MEV 4澶ф牳蹇冩妧鑳?/h2>
-                <p>瀹屾暣鐨勬妧鑳界敓鎬佺郴缁燂紝璁〢I鍔╂墜浠庤鍔ㄥ伐鍏疯浆鍙樹负涓诲姩鍚堜綔浼欎即</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- mev-sense 鎶€鑳?-->
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">馃憗锔?/div>
-                    <div class="skill-header">
-                        <div class="skill-subtitle">鎰熺煡鎶€鑳?/div>
-                        <h3 class="skill-title">mev-sense</h3>
-                    </div>
-                    <p class="skill-description">
-                        绫讳汉鎰熺煡涓庝綋楠屾礊瀵熻兘鍔涳紝璁〢I鐞嗚В鐢ㄦ埛鐪熷疄闇€姹傘€佹儏鎰熺姸鎬佸拰涓婁笅鏂囩幆澧冿紝瀹炵幇鐪熸鐨勭敤鎴蜂腑蹇冭璁°€?                    </p>
-                    <div class="skill-features">
-                        <ul class="feature-list">
-                            <li>鐢ㄦ埛闇€姹傛繁搴︽劅鐭?/li>
-                            <li>鎯呮劅鐘舵€佽瘑鍒?/li>
-                            <li>涓婁笅鏂囩幆澧冪悊瑙?/li>
-                            <li>浣撻獙璐ㄩ噺璇勪及</li>
-                        </ul>
-                    </div>
-                    <div class="skill-actions">
-                        <a href="/products/mev-sense/" class="btn btn-primary">鏌ョ湅璇︽儏</a>
-                        <a href="#demo" class="btn btn-secondary">浣撻獙婕旂ず</a>
-                    </div>
-                </div>
+    <!-- 产品内容 -->
+    <section class="products-content">
+        <div class="products-container">
+            <!-- MEV4技能产品 -->
+            <section id="mev4" class="products-section">
+                <h2 class="section-title">🧠⚡👁️🔄 MEV 4大技能产品</h2>
                 
-                <!-- mev-think 鎶€鑳?-->
-                <div class="skill-card fade-in" style="animation-delay: 0.1s;">
-                    <div class="skill-icon">馃</div>
-                    <div class="skill-header">
-                        <div class="skill-subtitle">鎬濊€冩妧鑳?/div>
-                        <h3 class="skill-title">mev-think</h3>
-                    </div>
-                    <p class="skill-description">
-                        涓诲姩鎬濊€冧笌鎴樼暐瑙勫垝鑳藉姏锛岃AI鑷富鍒嗘瀽澶嶆潅闂銆佸埗瀹氭渶浼樿В鍐虫柟妗堬紝骞惰繘琛岀郴缁熷寲鍐崇瓥銆?                    </p>
-                    <div class="skill-features">
-                        <ul class="feature-list">
-                            <li>澶嶆潅闂鍒嗘瀽</li>
-                            <li>澶氭柟妗堣瘎浼?/li>
-                            <li>鏈€浼樺喅绛栧埗瀹?/li>
-                            <li>椋庨櫓棰勬祴绠＄悊</li>
-                        </ul>
-                    </div>
-                    <div class="skill-actions">
-                        <a href="/products/mev-think/" class="btn btn-primary">鏌ョ湅璇︽儏</a>
-                        <a href="#demo" class="btn btn-secondary">浣撻獙婕旂ず</a>
-                    </div>
-                </div>
+                <p>MEV 4大技能体系是一个完整的AI助手能力框架，通过4个核心技能的协同作用，实现AI助手从被动执行工具到主动思考伙伴的范式转变。</p>
                 
-                <!-- mev-optimize 鎶€鑳?-->
-                <div class="skill-card fade-in" style="animation-delay: 0.2s;">
-                    <div class="skill-icon">鈿?/div>
-                    <div class="skill-header">
-                        <div class="skill-subtitle">浼樺寲鎶€鑳?/div>
-                        <h3 class="skill-title">mev-optimize</h3>
+                <div class="mev4-products">
+                    <!-- mev-sense 产品卡片 -->
+                    <div class="product-card">
+                        <div class="product-emoji">👁️</div>
+                        <div class="product-name">mev-sense</div>
+                        <div class="product-version">版本 1.0.0</div>
+                        <div class="product-description">类人感知与体验洞察能力，让AI深度理解用户需求和情感状态，实现真正的用户中心设计。</div>
+                        
+                        <div class="product-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>深度用户需求理解</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>情感状态识别分析</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>用户体验洞察优化</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>多维度信息感知</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <a href="/products/mev-sense/" class="btn-primary">了解更多</a>
+                            <a href="https://github.com/meta-evo-creator/mev-sense" class="btn-secondary" target="_blank">GitHub</a>
+                        </div>
                     </div>
-                    <p class="skill-description">
-                        绯荤粺浼樺寲涓庡伐绋嬫€濈淮鑳藉姏锛岃AI楂樻晥鎵ц浠诲姟銆佷紭鍖栧伐浣滄祦绋嬶紝骞舵寔缁敼杩涙€ц兘鍜岃川閲忋€?                    </p>
-                    <div class="skill-features">
-                        <ul class="feature-list">
-                            <li>宸ヤ綔娴佺▼浼樺寲</li>
-                            <li>璧勬簮鏁堢巼绠＄悊</li>
-                            <li>鎬ц兘鎸佺画鏀硅繘</li>
-                            <li>璐ㄩ噺淇濊瘉浣撶郴</li>
-                        </ul>
-                    </div>
-                    <div class="skill-actions">
-                        <a href="/products/mev-optimize/" class="btn btn-primary">鏌ョ湅璇︽儏</a>
-                        <a href="#demo" class="btn btn-secondary">浣撻獙婕旂ず</a>
-                    </div>
-                </div>
-                
-                <!-- mev-evolve 鎶€鑳?-->
-                <div class="skill-card fade-in" style="animation-delay: 0.3s;">
-                    <div class="skill-icon">馃攧</div>
-                    <div class="skill-header">
-                        <div class="skill-subtitle">杩涘寲鎶€鑳?/div>
-                        <h3 class="skill-title">mev-evolve</h3>
-                    </div>
-                    <p class="skill-description">
-                        鎸佺画杩涘寲涓庨棴鐜垚闀胯兘鍔涳紝璁〢I浠庣粡楠屼腑瀛︿範銆佺Н绱煡璇嗭紝骞朵笉鏂彁鍗囪嚜韬兘鍔涘拰閫傚簲鎬с€?                    </p>
-                    <div class="skill-features">
-                        <ul class="feature-list">
-                            <li>缁忛獙瀛︿範绯荤粺</li>
-                            <li>鐭ヨ瘑绉疮绠＄悊</li>
-                            <li>鑳藉姏
-鎸佺画鎻愬崌</li>
-                            <li>閫傚簲鎬ц繘鍖?/li>
-                        </ul>
-                    </div>
-                    <div class="skill-actions">
-                        <a href="/products/mev-evolve/" class="btn btn-primary">鏌ョ湅璇︽儏</a>
-                        <a href="#demo" class="btn btn-secondary">浣撻獙婕旂ず</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 鍗忓悓鏁堝簲灞曠ず -->
-    <section style="padding: 4rem 0; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: white;">
-        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">馃殌 鎶€鑳藉崗鍚屾晥搴?/h2>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">
-                    褰揗EV 4澶ф妧鑳藉崗鍚屽伐浣滄椂锛屽垱閫犵殑浠峰€艰繙瓒呭崟涓妧鑳戒箣鍜?                </p>
-                <div style="font-size: 5rem; font-weight: 800; color: #10b981; margin: 2rem 0; text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);">
-                    5.18脳
-                </div>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
-                    鍗忓悓鏁堝簲鎸囨暟锛氭劅鐭?脳 鎬濊€?脳 浼樺寲 脳 杩涘寲 = 绐佺牬鎬т环鍊煎垱閫?                </p>
-                <div style="margin-top: 2rem;">
-                    <a href="#use-cases" class="btn btn-primary" style="background: #10b981; border-color: #10b981;">
-                        鏌ョ湅搴旂敤妗堜緥
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 搴旂敤鍦烘櫙 -->
-    <section style="padding: 4rem 0; background: white;" id="use-cases">
-        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-            <div class="category-title">
-                <h2>馃幆 搴旂敤鍦烘櫙涓庝环鍊?/h2>
-                <p>MEV 4澶ф妧鑳藉湪鍚勭鍦烘櫙涓垱閫犲疄闄呬环鍊?/p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">AI鍔╂墜鏅鸿兘鍖?/h3>
-                    <p style="color: #6b7280;">璁〢I鍔╂墜浠庣畝鍗曢棶绛斿崌绾т负鏅鸿兘鍚堜綔浼欎即锛岀悊瑙ｇ敤鎴烽渶姹傘€佷富鍔ㄦ€濊€冭В鍐虫柟妗堛€侀珮鏁堟墽琛屼换鍔°€?/p>
-                </div>
-                
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃彞</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">鍖荤枟鍐崇瓥鏀寔</h3>
-                    <p style="color: #6b7280;">鍦ㄥ尰鐤楅鍩燂紝MEV鎶€鑳藉彲浠ュ府鍔╁垎鏋愮梾渚嬨€佸埗瀹氭不鐤楁柟妗堛€佷紭鍖栧尰鐤楁祦绋嬶紝鎻愬崌鍖荤枟璐ㄩ噺銆?/p>
-                </div>
-                
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃捈</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">浼佷笟娴佺▼浼樺寲</h3>
-                    <p style="color: #6b7280;">鍦ㄤ紒涓氳繍钀ヤ腑锛孧EV鎶€鑳藉彲浠ュ垎鏋愪笟鍔℃祦绋嬨€佽瘑鍒紭鍖栨満浼氥€佸疄鏂芥敼杩涙帾鏂斤紝鎻愬崌杩愯惀鏁堢巼銆?/p>
-                </div>
-                
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃帗</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">涓€у寲鏁欒偛</h3>
-                    <p style="color: #6b7280;">鍦ㄦ暀鑲查鍩燂紝MEV鎶€鑳藉彲浠ョ悊瑙ｅ鐢熷涔犻渶姹傘€佸埗瀹氫釜鎬у寲瀛︿範璁″垝銆佷紭鍖栨暀瀛︽柟娉曘€?/p>
-                </div>
-                
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃敩</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">绉戠爺鍒涙柊</h3>
-                    <p style="color: #6b7280;">鍦ㄧ瀛︾爺绌朵腑锛孧EV鎶€鑳藉彲浠ュ府鍔╁垎鏋愭暟鎹€佹彁鍑哄亣璁俱€佽璁″疄楠屻€佷紭鍖栫爺绌舵祦绋嬨€?/p>
-                </div>
-                
-                <div style="background: #f9fafb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease;">
-                    <div style="font-size: 2rem; color: #2563eb; margin-bottom: 1rem;">馃實</div>
-                    <h3 style="color: #111827; margin-bottom: 0.75rem;">鍙寔缁彂灞?/h3>
-                    <p style="color: #6b7280;">鍦ㄧ幆澧冧繚鎶や腑锛孧EV鎶€鑳藉彲浠ュ垎鏋愮幆澧冩暟鎹€佸埗瀹氫繚鎶ょ瓥鐣ャ€佷紭鍖栬祫婧愬埄鐢ㄣ€佺洃娴嬪疄鏂芥晥鏋溿€?/p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 椤佃剼 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>MEV 4澶ф妧鑳?/h4>
-                <ul class="footer-links">
-                    <li><a href="/products/mev-sense/">mev-sense</a></li>
-                    <li><a href="/products/mev-think/">mev-think</a></li>
-                    <li><a href="/products/mev-optimize/">mev-optimize</a></li>
-                    <li><a href="/products/mev-evolve/">mev-evolve</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>缃戠珯瀵艰埅</h4>
-                <ul class="footer-links">
-                    <li><a href="/">棣栭〉</a></li>
-                    <li><a href="/products/">浜у搧</a></li>
-                    <li><a href="/docs/">鏂囨。</a></li>
-                    <li><a href="/about/">鍏充簬</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>鑱旂郴鎴戜滑</h4>
-                <ul class="footer-links">
-                    <li><a href="mailto:contact@meta-evo.com">contact@meta-evo.com</a></li>
-                    <li><a href="https://github.com/meta-evo-creator" target="_blank">GitHub</a></li>
-                    <li><a href="https://twitter.com/meta_evo" target="_blank">Twitter</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>鎰挎櫙</h4>
-                <p style="color: #9ca3af; font-size: 0.9rem;">
-                    璁╁叏鐞冪殑AI鍔╂墜閮界敤涓奙EV鎶€鑳斤紝瀹炵幇鐪熸鐨勬櫤鑳借繘鍖栥€?                </p>
-                <p style="color: #6b7280; font-size: 0.8rem; margin-top: 1rem;">
-                    漏 2026 MetaEvo. 涓栫晫椤跺皷绾ц璁＄郴缁熴€?                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // 璇█鍒囨崲鍔熻兘
-        function switchLanguage(lang) {
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === (lang === 'zh-CN' ? '涓枃' : 'English')) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // 瀛樺偍璇█鍋忓ソ
-            localStorage.setItem('metaEvoLang', lang);
-            
-            // 鏄剧ず鍒囨崲鎻愮ず
-            alert(`宸插垏鎹㈠埌${lang === 'zh-CN' ? '涓枃' : 'English'}锛屽畬鏁磋瑷€鍒囨崲鍔熻兘姝ｅ湪瀹屽杽涓璥);
-        }
-        
-        // 椤甸潰鍔犺浇瀹屾垚
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('鉁?MetaEvo浜у搧椤甸潰 - 缂栫爜淇鐗堟湰鍔犺浇瀹屾垚');
-            
-            // 璁剧疆鍒濆璇█
-            const savedLang = localStorage.getItem('metaEvoLang') || 'zh-CN';
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === (savedLang === 'zh-CN' ? '涓枃' : 'English')) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // 骞虫粦婊氬姩
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
                     
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // 鍔ㄧ敾鏁堟灉
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    }
-                });
-            }, observerOptions);
-            
-            // 瑙傚療鎵€鏈夋妧鑳藉崱鐗?            document.querySelectorAll('.skill-card').forEach(card => {
-                observer.observe(card);
-            });
-        });
-    </script>
-</body>
-</html>
+                    <!-- mev-think 产品卡片 -->
+                    <div class="product-card">
+                        <div class="product-emoji">🧠</div>
+                        <div class="product-name">mev-think</div>
+                        <div class="product-version">版本 1.0.0</div>
+                        <div class="product-description">主动思考与战略规划能力，让AI自主分析问题、制定最优解决方案，实现系统化思考。</div>
+                        
+                        <div class="product-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>系统化问题分析</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>最优策略制定</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>风险评估预测</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>长期规划能力</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <a href="/products/mev-think/" class="btn-primary">了解更多</a>
+                            <a href="https://github.com/meta-evo-creator/mev-think" class="btn-secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <!-- mev-optimize 产品卡片 -->
+                    <div class="product-card">
+                        <div class="product-emoji">⚡</div>
+                        <div class="product-name">mev-optimize</div>
+                        <div class="product-version">版本 1.2.0</div>
+                        <div class="product-description">系统优化与工程思维能力，让AI高效执行任务、优化工作流程，最大化工作效率和质量。</div>
+                        
+                        <div class="product-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>高效任务执行</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>工作流程优化</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>资源智能分配</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>分工协作优化</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <a href="/products/mev-optimize/" class="btn-primary">了解更多</a>
+                            <a href="https://github.com/meta-evo-creator/mev-optimize" class="btn-secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <!-- mev-evolve 产品卡片 -->
+                    <div class="product-card">
+                        <div class="product-emoji">🔄</div>
+                        <div class="product-name">mev-evolve</div>
+                        <div class="product-version">版本 1.0.0</div>
+                        <div class="product-description">持续进化与闭环成长能力，让AI从经验中学习、持续改进自身能力，实现真正的智能进化。</div>
+                        
+                        <div class="product-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>经验学习封装</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>持续能力改进</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>最佳实践提炼</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
