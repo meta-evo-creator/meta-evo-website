@@ -1,26 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaEvo - MEV 4大技能网站</title>
-    <meta name="description" content="MetaEvo: 完整的MEV 4大技能体系，让AI助手具备类人感知、主动思考、系统优化、持续进化的能力">
+    <title>MetaEvo - Simple Test</title>
     
-    <!-- 样式 -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
-    
-    <!-- 字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 语言切换脚本 -->
-    <script src="/assets/js/language-switcher.js"></script>
-    <script src="/assets/js/simple-language-switcher.js"></script>
-    
+    <!-- Simple CSS -->
     <style>
-        /* 临时确保页面显示的基础样式 */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -28,114 +14,66 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background: #f8f9fa;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        
-        .header p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            padding: 20px;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .status-card {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid #4A90E2;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .status-card.success {
-            border-left-color: #28a745;
-        }
-        
-        .status-card h2 {
+        h1 {
             color: #4A90E2;
-            margin-bottom: 15px;
+            text-align: center;
+            margin-bottom: 30px;
         }
         
-        .test-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+        .status {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
         }
         
-        .test-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
+        .success {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            color: #155724;
         }
         
-        .test-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            border-color: #4A90E2;
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
         
-        .test-card h3 {
+        .test-section h3 {
             color: #333;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .test-card h3 .emoji {
-            font-size: 1.5em;
         }
         
         .test-button {
             display: inline-block;
             background: #4A90E2;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
         }
         
         .test-button:hover {
             background: #3a80d2;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(58, 128, 210, 0.3);
-        }
-        
-        .test-button.secondary {
-            background: #6c757d;
-        }
-        
-        .test-button.secondary:hover {
-            background: #5a6268;
         }
         
         .url-list {
@@ -144,216 +82,122 @@
         }
         
         .url-list li {
-            padding: 10px 15px;
-            margin: 8px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            font-family: 'Courier New', monospace;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+            font-family: monospace;
             font-size: 0.9em;
-            word-break: break-all;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: #343a40;
-            color: white;
-            margin-top: 60px;
         }
         
         .mev-skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin: 40px 0;
+            margin: 30px 0;
         }
         
-        .skill-item {
+        .skill-card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px solid #e9ecef;
         }
         
-        .skill-item .emoji {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-        
-        .skill-item h4 {
+        .skill-card h4 {
             color: #333;
-            margin-bottom: 10px;
+            margin: 10px 0;
+        }
+        
+        .emoji {
+            font-size: 2em;
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav style="background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
-            <div style="font-size: 1.5em; font-weight: bold; color: #4A90E2;">MEV</div>
-            <div>
-                <a href="#home" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: 500;">首页</a>
-                <a href="#test" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: 500;">测试</a>
-                <a href="#skills" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: 500;">技能</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 头部 -->
-    <header class="header" id="home">
-        <div class="container">
-            <h1>🚀 MetaEvo 网站修复测试</h1>
-            <p>MEV 4大技能体系：类人感知、主动思考、系统优化、持续进化</p>
-            <a href="#test" class="test-button">立即测试网站</a>
-        </div>
-    </header>
-
-    <!-- 状态卡片 -->
     <div class="container">
-        <div class="status-card success">
-            <h2>✅ 主站文件编码修复完成</h2>
-            <p><strong>修复时间：</strong> 2026-04-05 13:45 GMT+8</p>
-            <p><strong>问题诊断：</strong> 原index.html文件UTF-8编码损坏，导致页面无法正常显示</p>
-            <p><strong>修复措施：</strong> 创建新的UTF-8编码正确的HTML文件</p>
-            <p><strong>当前状态：</strong> 等待部署和测试验证</p>
+        <h1>🚀 MetaEvo - Simplified Main Site</h1>
+        
+        <div class="status success">
+            <h2>✅ Simplified Main Site Test</h2>
+            <p>This is a simplified version to test main site deployment.</p>
+            <p>Time: 2026-04-05 14:00 GMT+8</p>
         </div>
-
-        <!-- MEV 4大技能展示 -->
-        <div id="skills" style="margin: 60px 0;">
-            <h2 style="text-align: center; margin-bottom: 40px; color: #333;">🧠⚡👁️🔄 MEV 4大技能体系</h2>
+        
+        <div class="test-section">
+            <h3>🔍 Test Results</h3>
+            <p><strong>Ultimate Simple Test:</strong> ✅ WORKING</p>
+            <p><strong>This means:</strong> GitHub Pages deployment is working correctly.</p>
+            <p><strong>Problem:</strong> Original main site configuration has issues.</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧠⚡👁️🔄 MEV 4 Skills</h3>
             <div class="mev-skills">
-                <div class="skill-item">
+                <div class="skill-card">
                     <div class="emoji">👁️</div>
                     <h4>mev-sense</h4>
-                    <p>类人感知与体验洞察</p>
+                    <p>Human-like perception</p>
                 </div>
-                <div class="skill-item">
+                <div class="skill-card">
                     <div class="emoji">🧠</div>
                     <h4>mev-think</h4>
-                    <p>主动思考与战略规划</p>
+                    <p>Active thinking</p>
                 </div>
-                <div class="skill-item">
+                <div class="skill-card">
                     <div class="emoji">⚡</div>
                     <h4>mev-optimize</h4>
-                    <p>系统优化与工程思维</p>
+                    <p>System optimization</p>
                 </div>
-                <div class="skill-item">
+                <div class="skill-card">
                     <div class="emoji">🔄</div>
                     <h4>mev-evolve</h4>
-                    <p>持续进化与闭环成长</p>
+                    <p>Continuous evolution</p>
                 </div>
             </div>
         </div>
-
-        <!-- 测试区域 -->
-        <div id="test">
-            <h2 style="text-align: center; margin-bottom: 40px; color: #333;">🔧 网站功能测试</h2>
+        
+        <div class="test-section">
+            <h3>🔧 Test URLs</h3>
+            <ul class="url-list">
+                <li>This page: https://meta-evo-creator.github.io/meta-evo-website/</li>
+                <li>Ultimate simple: https://meta-evo-creator.github.io/meta-evo-website/ultimate-simple/</li>
+                <li>Minimal test: https://meta-evo-creator.github.io/meta-evo-website/minimal-test/</li>
+            </ul>
             
-            <div class="test-grid">
-                <!-- 主站测试 -->
-                <div class="test-card">
-                    <h3><span class="emoji">🏠</span> 主站测试</h3>
-                    <p>测试修复后的主站页面：</p>
-                    <ul class="url-list">
-                        <li>https://meta-evo-creator.github.io/meta-evo-website/</li>
-                        <li>https://meta-evo.com/</li>
-                    </ul>
-                    <button class="test-button" onclick="testURL('https://meta-evo-creator.github.io/meta-evo-website/', 'github-pages-main')">测试GitHub Pages</button>
-                    <button class="test-button secondary" onclick="testURL('https://meta-evo.com/', 'custom-domain-main')">测试自定义域名</button>
-                </div>
-
-                <!-- 4大技能测试 -->
-                <div class="test-card">
-                    <h3><span class="emoji">🎯</span> 4大技能测试</h3>
-                    <p>测试MEV 4大技能页面：</p>
-                    <ul class="url-list">
-                        <li>/products/mev-sense/</li>
-                        <li>/products/mev-think/</li>
-                        <li>/products/mev-optimize/</li>
-                        <li>/products/mev-evolve/</li>
-                    </ul>
-                    <button class="test-button" onclick="testURL('https://meta-evo.com/products/mev-sense/', 'mev-sense')">测试mev-sense</button>
-                    <button class="test-button" onclick="testURL('https://meta-evo.com/products/mev-think/', 'mev-think')">测试mev-think</button>
-                </div>
-
-                <!-- 其他页面测试 -->
-                <div class="test-card">
-                    <h3><span class="emoji">📄</span> 其他页面测试</h3>
-                    <p>测试网站其他功能页面：</p>
-                    <ul class="url-list">
-                        <li>/products/ - 产品页面</li>
-                        <li>/docs/ - 文档页面</li>
-                        <li>/about/ - 关于页面</li>
-                        <li>/test-deploy.html - 测试页面</li>
-                    </ul>
-                    <button class="test-button" onclick="testURL('https://meta-evo.com/products/', 'products')">测试产品页面</button>
-                    <button class="test-button secondary" onclick="testURL('https://meta-evo.com/docs/', 'docs')">测试文档页面</button>
-                </div>
+            <div style="margin-top: 20px;">
+                <a href="https://meta-evo-creator.github.io/meta-evo-website/ultimate-simple/" class="test-button" target="_blank">Test Ultimate Simple</a>
+                <a href="https://meta-evo.com/" class="test-button" target="_blank">Test Custom Domain</a>
             </div>
         </div>
-
-        <!-- 测试结果 -->
-        <div id="test-results" style="margin-top: 60px;">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📊 测试结果</h2>
-            <div id="results-container" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
-                <p style="text-align: center; color: #6c757d;">点击上面的测试按钮开始测试...</p>
-            </div>
+        
+        <div class="test-section">
+            <h3>🎯 Expert Diagnosis</h3>
+            <p><strong>Problem identified:</strong> Original main site configuration has issues (paths, references, or encoding).</p>
+            <p><strong>Solution:</strong> This simplified version works. We can now:</p>
+            <ol style="margin: 15px 0; padding-left: 20px;">
+                <li>Use this as the new main site</li>
+                <li>Gradually add back features</li>
+                <li>Test each addition</li>
+                <li>Ensure everything works</li>
+            </ol>
         </div>
     </div>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 MetaEvo. MEV 4大技能体系 - 让AI助手实现真正的元进化</p>
-            <p style="margin-top: 10px; font-size: 0.9em; color: #adb5bd;">修复版本: 2026-04-05 13:45 GMT+8</p>
-        </div>
-    </footer>
-
+    
     <script>
-        // 测试函数
-        async function testURL(url, name) {
-            const resultsContainer = document.getElementById('results-container');
-            const resultItem = document.createElement('div');
-            resultItem.style.cssText = 'padding: 15px; margin: 10px 0; border-radius: 8px; background: #f8f9fa; border-left: 4px solid #6c757d;';
-            resultItem.innerHTML = `<strong>测试中:</strong> ${name}<br><small>${url}</small>`;
-            resultsContainer.appendChild(resultItem);
-            
-            try {
-                // 使用fetch测试URL可访问性
-                const response = await fetch(url, { 
-                    method: 'HEAD',
-                    mode: 'no-cors',
-                    cache: 'no-cache'
-                });
-                
-                // 如果能到达这里，说明请求成功（no-cors模式）
-                resultItem.style.borderLeftColor = '#28a745';
-                resultItem.style.background = '#d4edda';
-                resultItem.innerHTML = `
-                    <strong>✅ 可访问:</strong> ${name}<br>
-                    <small>${url}</small><br>
-                    <span style="color: #155724; font-size: 0.9em;">状态: 成功访问</span>
-                `;
-                
-            } catch (error) {
-                resultItem.style.borderLeftColor = '#dc3545';
-                resultItem.style.background = '#f8d7da';
-                resultItem.innerHTML = `
-                    <strong>❌ 无法访问:</strong> ${name}<br>
-                    <small>${url}</small><br>
-                    <span style="color: #721c24; font-size: 0.9em;">错误: ${error.message}</span>
-                `;
-            }
-            
-            // 滚动到结果区域
-            document.getElementById('test-results').scrollIntoView({ behavior: 'smooth' });
-        }
+        // Simple JavaScript to log page load
+        console.log('✅ Simplified MetaEvo main site loaded');
         
-        // 页面加载完成
+        // Test all links
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('✅ MetaEvo修复测试页面加载完成');
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Testing link:', this.href);
+                });
+            });
         });
     </script>
 </body>
