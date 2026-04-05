@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 MetaEvo - MEV 4技能体系</title>
+    <meta name="description" content="MetaEvo：让AI助手实现真正的元进化 - 具备类人感知、主动思考、系统优化、持续进化的MEV 4大技能体系。">
+    
+    <!-- 世界顶尖级设计系统 -->
+    <link rel="stylesheet" href="/assets/css/world-class-design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 关于页面专属样式 */
+        .about-hero {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, #ddd6fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* 关于内容区域 */
+        .about-content {
+            padding: 4rem 0;
+            background: #f9fafb;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .about-section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #111827;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #8b5cf6;
+        }
+        
+        /* 愿景使命 */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .vision-card, .mission-card {
+            background: #faf5ff;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 2px solid #ddd6fe;
+        }
+        
+        .vision-card h3, .mission-card h3 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* MEV4技能展示 */
+        .mev4-showcase {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .mev4-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .mev4-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .mev4-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mev4-name {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mev4-desc {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        /* 团队理念 */
+        .team-philosophy {
+            background: #f0f9ff;
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 2px solid #bae6fd;
+        }
+        
+        .philosophy-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .philosophy-point {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .philosophy-point h4 {
+            color: #0369a1;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* 时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #8b5cf6;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #8b5cf6;
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            color: #7c3aed;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-section {
+                padding: 1.5rem;
+            }
+            
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span style="color: #7c3aed; font-weight: 800;">MEV</span>
+                <span style="color: #374151;">MetaEvo</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link">产品</a>
+                <a href="/docs/" class="nav-link">文档</a>
+                <a href="/about/" class="nav-link active">关于</a>
+                
+                <!-- 语言切换 -->
+                <div class="language-switcher" style="display: flex; gap: 0.5rem;">
+                    <button class="lang-btn active" onclick="switchLanguage('zh-CN')" style="padding: 0.5rem 1rem; border: 2px solid #7c3aed; background: #7c3aed; color: white; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">中文</button>
+                    <button class="lang-btn" onclick="switchLanguage('en')" style="padding: 0.5rem 1rem; border: 2px solid #ddd6fe; background: transparent; color: #7c3aed; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="about-hero">
+        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">关于 MetaEvo</h1>
+                <p class="hero-subtitle">让AI助手实现真正的元进化 - 从被动工具转变为主动合作伙伴</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#vision" class="btn btn-primary" style="background: white; color: #7c3aed;">
+                        我们的愿景
+                    </a>
+                    <a href="#mev4" class="btn btn-secondary" style="background: transparent; border-color: white; color: white;">
+                        MEV4技能体系
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于内容 -->
+    <section class="about-content">
+        <div class="about-container">
+            <!-- 愿景与使命 -->
+            <div class="about-section" id="vision">
+                <h2 class="section-title">🎯 愿景与使命</h2>
+                <p style="color: #374151; margin-bottom: 2rem; font-size: 1.1rem;">
+                    MetaEvo 不仅仅是一个技术项目，更是一场AI能力的范式革命。我们相信，AI助手应该从被动的执行工具，进化为主动的思考伙伴。
+                </p>
+                
+                <div class="vision-mission">
+                    <div class="vision-card">
+                        <h3>我们的愿景</h3>
+                        <p style="color: #6b7280;">
+                            <strong>让全球的AI助手都用上MEV技能</strong>，实现真正的智能进化。我们致力于建立AI助手能力的新标准，让每个AI都能具备类人感知、主动思考、系统优化和持续进化的能力。
+                        </p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <h3>我们的使命</h3>
+                        <p style="color: #6b7280;">
+                            通过MEV 4大技能体系，<strong>推动AI从"工具"到"合作伙伴"的范式转变</strong>。我们为开发者提供完整的能力框架，为企业提供智能进化解决方案，为个人用户提供真正智能的AI助手。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MEV4技能体系 -->
+            <div class="about-section" id="mev4">
+                <h2 class="section-title">🧠⚡👁️🔄 MEV 4技能体系</h2>
+                <p style="color: #374151; margin-bottom: 2rem;">
+                    MEV 4大技能体系是我们核心的技术创新，代表了AI能力的完整进化路径：
+                </p>
+                
+                <div class="mev4-showcase">
+                    <div class="mev4-grid">
+                        <div class="mev4-item">
+                            <div class="mev4-emoji">👁️</div>
+                            <div class="mev4-name">mev-sense</div>
+                            <div class="mev4-desc">类人感知与体验洞察能力</div>
+                        </div>
+                        
+                        <div class="mev4-item">
+                            <div class="mev4-emoji">🧠</div>
+                            <div class="mev4-name">mev-think</div>
+                            <div class="mev4-desc">主动思考与战略规划能力</div>
+                        </div>
+                        
+                        <div class="mev4-item">
+                            <div class="mev4-emoji">⚡</div>
+                            <div class="mev4-name">mev-optimize</div>
+                            <div class="mev4-desc">系统优化与工程思维能力</div>
+                        </div>
+                        
+                        <div class="mev4-item">
+                            <div class="mev4-emoji">🔄</div>
+                            <div class="mev4-name">mev-evolve</div>
+                            <div class="mev4-desc">持续进化与闭环成长能力</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <div style="font-size: 3rem; font-weight: 800; color: #10b981; margin: 1rem 0;">5.18×</div>
+                        <p style="color: #6b7280; max-width: 600px; margin: 0 auto;">
+                            协同效应指数：当4大技能协同工作时，创造的价值远超单个技能之和
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 我们的理念 -->
+            <div class="about-section">
+                <h2 class="section-title">💡 我们的理念</h2>
+                
+                <div class="team-philosophy">
+                    <h3 style="color: #0369a1; margin-bottom: 1.5rem;">核心工作理念</h3>
+                    <p style="color: #374151; margin-bottom: 1.5rem;">
+                        在MetaEvo，我们相信最好的技术来自于对用户需求的深度理解和对技术可能性的持续探索。我们的工作理念体现在每一个产品和决策中：
+                    </p>
+                    
+                    <div class="philosophy-points">
+                        <div class="philosophy-point">
+                            <h4>用户中心设计</h4>
+                            <p style="color: #6b7280;">一切从用户真实需求出发，通过mev-sense深度理解用户，创造真正有价值的产品。</p>
+                        </div>
+                        
+                        <div class="philosophy-point">
+                            <h4>系统化思考</h4>
+                            <p style="color: #6b7280;">运用mev-think进行系统分析，考虑长期影响和整体最优，而不是局部最优。</p>
+                        </div>
+                        
+                        <div class="philosophy-point">
+                            <h4>持续优化改进</h4>
+                            <p style="color: #6b7280;">通过mev-optimize不断优化工作流程和产品质量，追求卓越而非满足于合格。</p>
+                        </div>
+                        
+                        <div class="philosophy-point">
+                            <h4>学习型组织</h4>
+                            <p style="color: #6b7280;">践行mev-evolve理念，从每次经验中学习，持续提升团队和产品能力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 发展历程 -->
+            <div class="about-section">
+                <h2 class="section-title">📅 发展历程</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026年3月</div>
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">MEV概念诞生</h4>
+                        <p style="color: #6b7280;">基于对AI助手局限性的深度思考，提出MEV（Meta Evolution）概念框架。</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026年4月初</div>
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">MEV4技能体系完善</h4>
+                        <p style="color: #6b7280;">从3技能扩展到4技能完整体系：mev-sense, mev-think, mev-optimize, mev-evolve。</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026年4月5日</div>
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">官方网站上线</h4>
+                        <p style="color: #6b7280;">MetaEvo官方网站正式上线，展示MEV4技能体系和商业愿景。</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">未来规划</div>
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">生态建设与全球推广</h4>
+                        <p style="color: #6b7280;">建立MEV技能生态系统，让全球AI助手都用上MEV技能，实现真正的智能进化。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 加入我们 -->
+            <div class="about-section" style="text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+                <h2 class="section-title">🚀 加入智能进化革命</h2>
+                <p style="color: #374151; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    无论你是开发者、企业用户还是AI爱好者，都可以加入MEV智能进化革命。让我们一起推动AI从工具到合作伙伴的范式转变。
+                </p>
+                
+                <div style="display: flex; gap: 1

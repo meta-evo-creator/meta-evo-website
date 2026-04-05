@@ -1,0 +1,109 @@
+                        <li><a href="/products/mev-think/">mev-think</a></li>
+                        <li><a href="/products/mev-optimize/">mev-optimize</a></li>
+                        <li><a href="/products/mev-evolve/">mev-evolve</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>网站导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/products/">产品</a></li>
+                        <li><a href="/docs/">文档</a></li>
+                        <li><a href="/about/">关于</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@meta-evo.com">contact@meta-evo.com</a></li>
+                        <li><a href="https://github.com/meta-evo-creator" target="_blank">GitHub</a></li>
+                        <li><a href="https://twitter.com/meta_evo" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>愿景</h4>
+                    <p style="color: var(--gray-400); font-size: 0.9rem;">
+                        让全球的AI助手都用上MEV技能，实现真正的智能进化。
+                    </p>
+                    <p style="color: var(--gray-500); font-size: 0.8rem; margin-top: var(--space-4);">
+                        © 2026 MetaEvo. 世界顶尖级设计系统。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 语言切换功能
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === (lang === 'zh-CN' ? '中文' : 'English')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // 存储语言偏好
+            localStorage.setItem('metaEvoLang', lang);
+            
+            // 显示切换提示
+            alert(`已切换到${lang === 'zh-CN' ? '中文' : 'English'}，完整语言切换功能正在完善中`);
+        }
+        
+        // 页面加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ MetaEvo产品页面 - 世界顶尖级设计加载完成');
+            
+            // 设置初始语言
+            const savedLang = localStorage.getItem('metaEvoLang') || 'zh-CN';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === (savedLang === 'zh-CN' ? '中文' : 'English')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // 动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有技能卡片
+            document.querySelectorAll('.skill-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

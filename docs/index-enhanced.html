@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEV 4技能文档 - MetaEvo</title>
+    <meta name="description" content="MetaEvo MEV 4大技能完整文档和使用指南：mev-sense、mev-think、mev-optimize、mev-evolve。">
+    
+    <!-- 世界顶尖级设计系统 -->
+    <link rel="stylesheet" href="/assets/css/world-class-design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 文档页面专属样式 */
+        .docs-hero {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .docs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, #d1fae5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* 文档内容区域 */
+        .docs-content {
+            padding: 4rem 0;
+            background: #f9fafb;
+        }
+        
+        .docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .docs-sidebar {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .docs-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .docs-nav li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .docs-nav a {
+            color: #374151;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            display: block;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .docs-nav a:hover {
+            background: #f3f4f6;
+            color: #059669;
+        }
+        
+        .docs-nav a.active {
+            background: #d1fae5;
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        .docs-main {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .docs-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .docs-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #10b981;
+        }
+        
+        .skill-docs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .skill-doc-card {
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-doc-card:hover {
+            border-color: #10b981;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-doc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-doc-icon {
+            font-size: 2.5rem;
+        }
+        
+        .skill-doc-title {
+            font-size: 1.5rem;
+            color: #111827;
+            margin: 0;
+        }
+        
+        .skill-doc-content h4 {
+            color: #374151;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .skill-doc-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-doc-content li {
+            padding: 0.5rem 0;
+            color: #6b7280;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-doc-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* 代码示例 */
+        .code-example {
+            background: #1f2937;
+            color: #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        
+        .code-comment {
+            color: #9ca3af;
+        }
+        
+        .code-keyword {
+            color: #60a5fa;
+        }
+        
+        .code-string {
+            color: #34d399;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .docs-main {
+                padding: 1.5rem;
+            }
+            
+            .skill-docs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span style="color: #059669; font-weight: 800;">MEV</span>
+                <span style="color: #374151;">MetaEvo</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="/" class="nav-link">首页</a>
+                <a href="/products/" class="nav-link">产品</a>
+                <a href="/docs/" class="nav-link active">文档</a>
+                <a href="/about/" class="nav-link">关于</a>
+                
+                <!-- 语言切换 -->
+                <div class="language-switcher" style="display: flex; gap: 0.5rem;">
+                    <button class="lang-btn active" onclick="switchLanguage('zh-CN')" style="padding: 0.5rem 1rem; border: 2px solid #059669; background: #059669; color: white; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">中文</button>
+                    <button class="lang-btn" onclick="switchLanguage('en')" style="padding: 0.5rem 1rem; border: 2px solid #a7f3d0; background: transparent; color: #059669; border-radius: 0.375rem; cursor: pointer; font-weight: 500;">English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="docs-hero">
+        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">MEV 4技能文档</h1>
+                <p class="hero-subtitle">完整的MEV 4大技能使用指南、最佳实践和开发文档</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#getting-started" class="btn btn-primary" style="background: white; color: #059669;">
+                        快速开始
+                    </a>
+                    <a href="#skills" class="btn btn-secondary" style="background: transparent; border-color: white; color: white;">
+                        查看技能文档
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文档内容 -->
+    <section class="docs-content">
+        <div class="docs-container">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- 侧边栏导航 -->
+                <div class="docs-sidebar lg:col-span-1">
+                    <h3 style="color: #111827; margin-bottom: 1.5rem; font-size: 1.25rem;">文档导航</h3>
+                    <ul class="docs-nav">
+                        <li><a href="#getting-started" class="active">快速开始</a></li>
+                        <li><a href="#mev-sense-docs">mev-sense 文档</a></li>
+                        <li><a href="#mev-think-docs">mev-think 文档</a></li>
+                        <li><a href="#mev-optimize-docs">mev-optimize 文档</a></li>
+                        <li><a href="#mev-evolve-docs">mev-evolve 文档</a></li>
+                        <li><a href="#best-practices">最佳实践</a></li>
+                        <li><a href="#api-reference">API 参考</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 主内容区域 -->
+                <div class="docs-main lg:col-span-3">
+                    <!-- 快速开始 -->
+                    <div class="docs-section" id="getting-started">
+                        <h2 class="section-title">🚀 快速开始</h2>
+                        <p>MEV 4大技能体系是一个完整的AI助手能力框架，让AI具备类人感知、主动思考、系统优化和持续进化的能力。</p>
+                        
+                        <h3 style="color: #374151; margin: 1.5rem 0 1rem;">核心概念</h3>
+                        <p>MEV 4技能协同工作，创造指数级价值：</p>
+                        
+                        <div class="code-example">
+                            <span class="code-comment">// MEV 4技能协同工作流</span><br>
+                            <span class="code-keyword">const</span> mevWorkflow = {<br>
+                            &nbsp;&nbsp;<span class="code-string">"感知"</span>: <span class="code-string">"mev-sense"</span>, <span class="code-comment">// 理解用户需求和环境</span><br>
+                            &nbsp;&nbsp;<span class="code-string">"思考"</span>: <span class="code-string">"mev-think"</span>, <span class="code-comment">// 分析问题并制定策略</span><br>
+                            &nbsp;&nbsp;<span class="code-string">"优化"</span>: <span class="code-string">"mev-optimize"</span>, <span class="code-comment">// 高效执行和优化</span><br>
+                            &nbsp;&nbsp;<span class="code-string">"进化"</span>: <span class="code-string">"mev-evolve"</span> <span class="code-comment">// 从经验中学习改进</span><br>
+                            };<br><br>
+                            <span class="code-comment">// 协同效应：感知 × 思考 × 优化 × 进化 = 5.18× 价值创造</span><br>
+                            <span class="code-keyword">const</span> synergyValue = <span class="code-string">"5.18×"</span>;
+                        </div>
+                    </div>
+                    
+                    <!-- MEV 4技能文档 -->
+                    <div class="docs-section" id="skills">
+                        <h2 class="section-title">🧠⚡👁️🔄 MEV 4技能文档</h2>
+                        <p>以下是MEV 4大技能的详细文档和使用指南：</p>
+                        
+                        <div class="skill-docs">
+                            <!-- mev-sense 文档 -->
+                            <div class="skill-doc-card" id="mev-sense-docs">
+                                <div class="skill-doc-header">
+                                    <div class="skill-doc-icon">👁️</div>
+                                    <h3 class="skill-doc-title">mev-sense</h3>
+                                </div>
+                                <div class="skill-doc-content">
+                                    <h4>核心功能</h4>
+                                    <ul>
+                                        <li>用户需求深度感知</li>
+                                        <li>情感状态识别分析</li>
+                                        <li>上下文环境理解</li>
+                                        <li>体验质量评估</li>
+                                    </ul>
+                                    
+                                    <h4>使用场景</h4>
+                                    <ul>
+                                        <li>理解用户真实需求</li>
+                                        <li>识别用户情感状态</li>
+                                        <li>分析使用环境上下文</li>
+                                        <li>评估用户体验质量</li>
+                                    </ul>
+                                    
+                                    <h4>最佳实践</h4>
+                                    <ul>
+                                        <li>多维度感知用户需求</li>
+                                        <li>结合上下文理解意图</li>
+                                        <li>持续优化感知准确性</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- mev-think 文档 -->
+                            <div class="skill-doc-card" id="mev-think-docs">
+                                <div class="skill-doc-header">
+                                    <div class="skill-doc-icon">🧠</div>
+                                    <h3 class="skill-doc-title">mev-think</h3>
+                                </div>
+                                <div class="skill-doc-content">
+                                    <h4>核心功能</h4>
+                                    <ul>
+                                        <li>复杂问题系统分析</li>
+                                        <li>多方案评估比较</li>
+                                        <li>最优决策制定</li>
+                                        <li>风险预测管理</li>
+                                    </ul>
+                                    
+                                    <h4>使用场景</h4>
+                                    <ul>
+                                        <li>分析复杂业务问题</li>
+                                        <li>制定项目执行策略</li>
+                                        <li>评估不同方案优劣</li>
+                                        <li>预测和管理风险</li>
+                                    </ul>
+                                    
+                                    <h4>最佳实践</h4>
+                                    <ul>
+                                        <li>建立系统化思考框架</li>
+                                        <li>使用决策树分析问题</li>
+                                        <li>考虑长期影响和风险</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- mev-optimize 文档 -->
+                            <div class="skill-doc-card" id="mev-optimize-docs">
+                                <div class="skill-doc-header">
+                                    <div class="skill-doc-icon">⚡</div>
+                                    <h3 class="skill-doc-title">mev-optimize</h3>
+                                </div>
+                                <div class="skill-doc-content">
+                                    <h4>核心功能</h4>
+                                    <ul>
+                                        <li>工作流程优化设计</li>
+                                        <li>资源效率最大化</li>
+                                        <li>性能持续改进</li>
+                                        <li>质量保证体系</li>
+                                    </ul>
+                                    
+                                    <h4>使用场景</h4>
+                                    <ul>
+                                        <li>优化工作流程效率</li>
+                                        <li>最大化资源利用率</li>
+                                        <li>持续改进系统性能</li>
+                                        <li>建立质量保证机制</li>
+                                    </ul>
+                                    
+                                    <h4>最佳实践</h4>
+                                    <ul>
+                                        <li>建立标准化工作流程</li>
+                                        <li>持续监控和优化性能</li>
+                                        <li>实施质量保证措施</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- mev-evolve 文档 -->
+                            <div class="skill-doc-card" id="mev-evolve-docs">
+                                <div class="skill-doc-header">
+                                    <div class="skill-doc-icon">🔄</div>
+                                    <h3 class="skill-doc-title">mev-evolve</h3>
+                                </div>
+                                <div class="skill-doc-content">
+                                    <h4>核心功能</h4>
+                                    <ul>
+                                        <li
