@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Test - MetaEvo Deployment Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 MetaEvo 网站部署状态测试</h1>
+    
+    <div class="status warning">
+        <h2>⚠️ 部署状态检查</h2>
+        <p><strong>测试时间：</strong> <span id="timestamp">2026-04-05 13:23 GMT+8</span></p>
+        <p><strong>当前状态：</strong> 网站无法访问，正在排查</p>
+    </div>
+    
+    <div class="test-section">
+        <h3>🎯 测试目标</h3>
+        <p>验证以下页面是否可以访问：</p>
+        <ul>
+            <li><a href="https://meta-evo.com/" target="_blank">主站 (meta-evo.com)</a></li>
+            <li><a href="https://meta-evo-creator.github.io/meta-evo-website/" target="_blank">GitHub Pages 默认URL</a></li>
+            <li><a href="https://meta-evo.com/test-deploy.html" target="_blank">测试页面</a></li>
+        </ul>
+        
+        <button onclick="testURL('https://meta-evo.com/')">测试主站</button>
+        <button onclick="testURL('https://meta-evo-creator.github.io/meta-evo-website/')">测试GitHub Pages</button>
+        <button onclick="testURL('https://meta-evo.com/test-deploy.html')">测试页面</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>🔧 问题排查步骤</h3>
+        <ol>
+            <li>检查 GitHub Actions 部署状态</li>
+            <li>验证 GitHub Pages 设置</li>
+            <li>检查域名解析 (DNS)</li>
+            <li>验证 CNAME 配置</li>
+            <li>检查浏览器控制台错误</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h3>📊 测试结果</h3>
+        <div id="test-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>🚨 紧急排查链接</h3>
+        <p>请手动检查以下链接：</p>
+        <ul>
+            <li><a href="https://github.com/meta-evo-creator/meta-evo-website/actions" target="_blank">GitHub Actions 状态</a></li>
+            <li><a href="https://github.com/meta-evo-creator/meta-evo-website/settings/pages" target="_blank">GitHub Pages 设置</a></li>
+            <li><a href="https://www.whatsmydns.net/#A/meta-evo.com" target="_blank">DNS 解析检查</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        function testURL(url) {
+            const resultsDiv = document.getElementById('test-results');
+            const resultItem = document.createElement('div');
+            resultItem.className = 'status';
+            resultItem.innerHTML = `<p><strong>测试URL：</strong> ${url}</p><p>测试中...</p>`;
+            resultsDiv.prepend(resultItem);
+            
+            fetch(url, { method: 'HEAD', mode: 'no-cors' })
+                .then(() => {
+                    resultItem.className = 'status success';
+                    resultItem.innerHTML = `<p><strong>✅ 可访问：</strong> ${url}</p><p>状态：成功</p>`;
+                })
+                .catch(error => {
+                    resultItem.className = 'status error';
+                    resultItem.innerHTML = `<p><strong>❌ 无法访问：</strong> ${url}</p><p>错误：${error.message}</p>`;
+                });
+        }
+        
+        // 更新时间戳
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('en-US', {
+            timeZone: 'Asia/Shanghai',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).replace(/(\d+)\/(\d+)\/(\d+),/, '$3-$1-$2');
+    </script>
+</body>
+</html>
