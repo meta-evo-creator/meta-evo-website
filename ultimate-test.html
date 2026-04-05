@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Test - MetaEvo Deployment Diagnosis</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .test-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .test-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .test-section h3 .emoji {
+            font-size: 1.5em;
+        }
+        
+        .url-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .url-list li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .url-list li:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+        
+        .url {
+            font-family: 'Courier New', monospace;
+            color: #495057;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        
+        .test-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .test-button:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+        }
+        
+        .test-button:active {
+            transform: translateY(0);
+        }
+        
+        .results {
+            margin-top: 30px;
+        }
+        
+        .result-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .diagnosis {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .diagnosis h4 {
+            margin-bottom: 10px;
+            color: #856404;
+        }
+        
+        .timestamp {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .status-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .status-fail {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .status-unknown {
+            background: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 MetaEvo 终极部署诊断</h1>
+            <p>基于GitHub Actions全部正常运行，诊断网站访问问题</p>
+        </div>
+        
+        <div class="test-section">
+            <h3><span class="emoji">🎯</span> 决定性测试</h3>
+            <p>测试以下URL，结果将决定问题方向：</p>
+            <ul class="url-list">
+                <li>
+                    <span class="url">https://meta-evo-creator.github.io/meta-evo-website/</span>
+                    <button class="test-button" onclick="testURL(this, 'https://meta-evo-creator.github.io/meta-evo-website/', 'github-pages')">测试访问</button>
+                </li>
+                <li>
+                    <span class="url">https://meta-evo.com/</span>
+                    <button class="test-button" onclick="testURL(this, 'https://meta-evo.com/', 'custom-domain')">测试访问</button>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3><span class="emoji">📊</span> 测试结果</h3>
+            <div id="results" class="results">
+                <!-- 结果将动态显示在这里 -->
+            </div>
+        </div>
+        
+        <div id="diagnosis" class="diagnosis" style="display: none;">
+            <h4>🔍 诊断结果</h4>
+            <div id="diagnosis-content"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3><span class="emoji">🔧</span> 问题解决方案</h3>
+            <div id="solutions" style="display: none;">
+                <!-- 解决方案将动态显示 -->
+            </div>
+        </div>
+        
+        <div class="timestamp">
+            测试时间: <span id="current-time">2026-04-05 13:31 GMT+8</span>
+        </div>
+    </div>
+    
+    <script>
+        // 更新时间戳
+        document.getElementById('current-time').textContent = new Date().toLocaleString('en-US', {
+            timeZone: 'Asia/Shanghai',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).replace(/(\d+)\/(\d+)\/(\d+),/, '$3-$1-$2') + ' GMT+8';
+        
+        async function testURL(button, url, type) {
+            const buttonText = button.textContent;
+            button.textContent = '测试中...';
+            button.disabled = true;
+            
+            const resultDiv = document.getElementById('results');
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            resultItem.innerHTML = `
+                <strong>测试URL:</strong> ${url}<br>
+                <span>状态: 测试中...</span>
+            `;
+            resultDiv.appendChild(resultItem);
+            
+            try {
+                // 使用fetch测试URL可访问性
+                const response = await fetch(url, { 
+                    method: 'HEAD',
+                    mode: 'no-cors',
+                    cache: 'no-cache'
+                });
+                
+                // 如果能到达这里，说明请求成功（no-cors模式）
+                resultItem.className = 'result-item success';
+                resultItem.innerHTML = `
+                    <strong>✅ 可访问:</strong> ${url}<br>
+                    <span>状态: 成功访问</span>
+                    <span class="status-badge status-success">SUCCESS</span>
+                `;
+                
+                // 存储结果
+                window[type + '_result'] = true;
+                
+            } catch (error) {
+                resultItem.className = 'result-item error';
+                resultItem.innerHTML = `
+                    <strong>❌ 无法访问:</strong> ${url}<br>
+                    <span>错误: ${error.message}</span>
+                    <span class="status-badge status-fail">FAIL</span>
+                `;
+                
+                // 存储结果
+                window[type + '_result'] = false;
+            }
+            
+            resultItem.style.display = 'block';
+            button.textContent = buttonText;
+            button.disabled = false;
+            
+            // 检查是否两个测试都完成了
+            if (window.github_pages_result !== undefined && window.custom_domain_result !== undefined) {
+                showDiagnosis();
+            }
+        }
+        
+        function showDiagnosis() {
+            const diagnosisDiv = document.getElementById('diagnosis');
+            const diagnosisContent = document.getElementById('diagnosis-content');
+            const solutionsDiv = document.getElementById('solutions');
+            
+            diagnosisDiv.style.display = 'block';
+            solutionsDiv.style.display = 'block';
+            
+            if (window.github_pages_result && window.custom_domain_result) {
+                // 两个都可访问
+                diagnosisContent.innerHTML = `
+                    <p><strong>✅ 完美！两个URL都可访问！</strong></p>
+                    <p>这意味着：</p>
+                    <ul>
+                        <li>GitHub Pages部署成功</li>
+                        <li>域名配置正确</li>
+                        <li>网站完全正常</li>
+                    </ul>
+                    <p>之前无法访问可能是临时网络问题或浏览器缓存。</p>
+                `;
+                
+                solutionsDiv.innerHTML = `
+                    <p><strong>🎉 庆祝！网站部署成功！</strong></p>
+                    <p>现在可以：</p>
+                    <ol>
+                        <li>清除浏览器缓存后重新访问</li>
+                        <li>在不同设备上测试</li>
+                        <li>开始宣传你的MEV 4大技能网站！</li>
+                    </ol>
+                `;
+                
+            } else if (window.github_pages_result && !window.custom_domain_result) {
+                // 只有GitHub Pages可访问
+                diagnosisContent.innerHTML = `
+                    <p><strong>🔍 诊断结果：域名配置问题</strong></p>
+                    <p>这意味着：</p>
+                    <ul>
+                        <li>✅ GitHub Pages部署成功</li>
+                        <li>❌ 自定义域名无法访问</li>
+                        <li>问题在域名解析或CNAME配置</li>
+                    </ul>
+                `;
+                
+                solutionsDiv.innerHTML = `
+                    <p><strong>🔧 解决方案：修复域名配置</strong></p>
+                    <ol>
+                        <li><strong>检查CNAME文件：</strong>确保内容为 <code>meta-evo.com</code></li>
+                        <li><strong>验证DNS设置：</strong>
+                            <ul>
+                                <li>A记录指向：185.199.108.153</li>
+                                <li>A记录指向：185.199.109.153</li>
+                                <li>A记录指向：185.199.110.153</li>
+                                <li>A记录指向：185.199.111.153</li>
+                            </ul>
+                        </li>
+                        <li><strong>等待DNS传播：</strong>通常1-2小时，最长24小时</li>
+                        <li><strong>临时方案：</strong>使用GitHub Pages URL宣传</li>
+                    </ol>
+                `;
+                
+            } else if (!window.github_pages_result && window.custom_domain_result) {
+                // 只有自定义域名可访问（不太可能）
+                diagnosisContent.innerHTML = `
+                    <p><strong>⚠️ 异常情况：只有自定义域名可访问</strong></p>
+                    <p>这通常不会发生，可能原因：</p>
+                    <ul>
+                        <li>GitHub Pages URL被屏蔽</li>
+                        <li>测试时网络波动</li>
+                        <li>GitHub Pages服务临时问题</li>
+                    </ul>
+                `;
+                
+            } else {
+                // 两个都不可访问
+                diagnosisContent.innerHTML = `
+                    <p><strong>🚨 严重问题：两个URL都不可访问</strong></p>
+                    <p>这意味着：</p>
+                    <ul>
+                        <li>❌ GitHub Pages部署可能失败</li>
+                        <li>❌ 或网络完全无法访问GitHub</li>
+                        <li>需要检查GitHub Actions详细日志</li>
+                    </ul>
+                `;
+                
+                solutionsDiv.innerHTML = `
+                    <p><strong>🔧 紧急解决方案：</strong></p>
+                    <ol>
+                        <li><strong>检查GitHub Actions详细日志：</strong>
+                            <ul>
+                                <li>点击最新工作流</li>
+                                <li>查看是否有红色错误</li>
+                                <li>截图错误信息</li>
+                            </ul>
+                        </li>
+                        <li><strong>检查GitHub Pages设置：</strong>
+                            <ul>
+                                <li>访问仓库Settings > Pages</li>
+                                <li>验证所有配置</li>
+                                <li>查看错误提示</li>
+                            </ul>
+                        </li>
+                        <li><strong>网络诊断：</strong>
+                            <ul>
+                                <li>更换网络测试</li>
+                                <li>使用手机网络测试</li>
+                                <li>请朋友帮忙测试</li>
+                            </ul>
+                        </li>
+                    </ol>
+                `;
+            }
+        }
+        
+        // 自动滚动到结果
+        function scrollToResults() {
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
